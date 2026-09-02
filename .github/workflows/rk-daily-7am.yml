@@ -1,0 +1,43 @@
+name: RK Daily Gita Lesson (7 AM IST)
+
+on:
+  schedule:
+    # 1:00 AM UTC = 6:30 AM IST — fires early so even with GitHub Actions delay (~30-60 min),
+    # lesson arrives by 7:00 AM IST. GitHub Actions cron is NOT exact — it often fires late.
+    - cron: '0 1 * * *'
+    # Backup: 1:30 AM UTC = 7:00 AM IST (original time, in case first one is delayed)
+    - cron: '30 1 * * *'
+  workflow_dispatch: # Allow manual trigger for testing
+
+permissions:
+  contents: write # For committing gita-progress.json
+
+jobs:
+  send-lesson:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+      LLM_MODEL: ${{ secrets.LLM_MODEL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Send Daily Gita Lesson
+        run: python generate_lesson.py
+
+      - name: Commit progress
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add gita-progress.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "📖 Daily Gita lesson progress update"
+          git push || true

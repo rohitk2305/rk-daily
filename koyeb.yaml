@@ -1,0 +1,32 @@
+# Koyeb configuration — deploy via GitHub
+# This file tells Koyeb how to build and run the bot
+services:
+  - name: rk-guru-bot
+    github:
+      branch: main
+      repo: rohitk2305/rk-daily
+      build_command: ""
+      dockerfile_path: /Dockerfile
+    instance_type: free
+    env:
+      - key: TELEGRAM_BOT_TOKEN
+        scope: REGION
+      - key: TELEGRAM_CHAT_ID
+        scope: REGION
+      - key: LLM_API_KEY
+        scope: REGION
+      - key: LLM_BASE_URL
+        scope: REGION
+        value: "https://generativelanguage.googleapis.com/v1beta/openai"
+      - key: LLM_MODEL
+        scope: REGION
+        value: "gemini-3.6-flash"
+      - key: PORT
+        scope: REGION
+        value: "8000"
+    health_check:
+      http_path: /health
+      port: 8000
+    routes:
+      - path: /
+        port: 8000

@@ -1,0 +1,2 @@
+# No external dependencies needed — bot uses only Python stdlib
+# (urllib, json, base64, http.server all built-in)
