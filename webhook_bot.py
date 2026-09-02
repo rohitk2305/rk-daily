@@ -140,6 +140,96 @@ RULES:
 
 Goal: connect ancient wisdom to modern life. Help seeker grow in Baal, Buddhi, Vidya. Keep it conversational and brief."""
 
+# ─── API Usage Stats (per-day counters) ───
+from datetime import date as _date
+_usage = {
+    "date": str(_date.today()),
+    "groq_requests": 0,
+    "gemini_requests": 0,
+    "openrouter_requests": 0,
+    "groq_errors": 0,
+    "gemini_errors": 0,
+    "openrouter_errors": 0,
+    "total_messages": 0,
+}
+
+# Free tier limits
+GROQ_DAILY_LIMIT = 14400      # 14,400 req/day
+GEMINI_DAILY_LIMIT = 1500     # free tier RPD
+OPENROUTER_DAILY_LIMIT = 1000 # varies by model
+
+def _reset_usage_if_new_day():
+    """Reset daily counters if date changed (handles Render sleep/wake)."""
+    today = str(_date.today())
+    if _usage["date"] != today:
+        _usage["date"] = today
+        _usage["groq_requests"] = 0
+        _usage["gemini_requests"] = 0
+        _usage["openrouter_requests"] = 0
+        _usage["groq_errors"] = 0
+        _usage["gemini_errors"] = 0
+        _usage["openrouter_errors"] = 0
+        _usage["total_messages"] = 0
+
+def _track_request(provider_name, success):
+    """Track API request count per provider."""
+    _reset_usage_if_new_day()
+    _usage["total_messages"] += 1
+    if provider_name == "groq":
+        _usage["groq_requests"] += 1
+        if not success:
+            _usage["groq_errors"] += 1
+    elif provider_name == "gemini":
+        _usage["gemini_requests"] += 1
+        if not success:
+            _usage["gemini_errors"] += 1
+    elif provider_name == "openrouter":
+        _usage["openrouter_requests"] += 1
+        if not success:
+            _usage["openrouter_errors"] += 1
+
+def get_stats_text():
+    """Generate usage stats message for /stats command."""
+    _reset_usage_if_new_day()
+    g_used = _usage["groq_requests"]
+    g_err = _usage["groq_errors"]
+    g_rem = max(0, GROQ_DAILY_LIMIT - g_used)
+    
+    gem_used = _usage["gemini_requests"]
+    gem_err = _usage["gemini_errors"]
+    gem_rem = max(0, GEMINI_DAILY_LIMIT - gem_used)
+    
+    or_used = _usage["openrouter_requests"]
+    or_err = _usage["openrouter_errors"]
+    or_rem = max(0, OPENROUTER_DAILY_LIMIT - or_used)
+    
+    total_used = g_used + gem_used + or_used
+    total_rem = g_rem + gem_rem + or_rem
+    
+    return (
+        f"📊 <b>RK Bot — API Usage Stats</b>\n"
+        f"📅 {_usage['date']}\n"
+        f"━━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"🟢 <b>Groq</b> (Primary)\n"
+        f"• Used: {g_used} / {GROQ_DAILY_LIMIT}\n"
+        f"• Remaining: {g_rem}\n"
+        f"• Errors: {g_err}\n\n"
+        f"🔵 <b>Gemini</b> (Fallback)\n"
+        f"• Used: {gem_used} / {GEMINI_DAILY_LIMIT}\n"
+        f"• Remaining: {gem_rem}\n"
+        f"• Errors: {gem_err}\n\n"
+        f"🟣 <b>OpenRouter</b> (Last Resort)\n"
+        f"• Used: {or_used} / {OPENROUTER_DAILY_LIMIT}\n"
+        f"• Remaining: {or_rem}\n"
+        f"• Errors: {or_err}\n\n"
+        f"━━━━━━━━━━━━━━━━━━━━━\n"
+        f"📈 <b>Total Messages:</b> {_usage['total_messages']}\n"
+        f"📈 <b>Total Requests:</b> {total_used}\n"
+        f"✅ <b>Total Remaining:</b> {total_rem}\n\n"
+        f"🔄 Resets daily at midnight IST\n"
+        f"🙏 /stats anytime to check usage"
+    )
+
 # ─── Debug: capture recent errors ───
 recent_errors = []
 recent_logs = []
@@ -420,11 +510,13 @@ def call_llm(messages, chat_id=None):
                 if content and content.strip():
                     if attempt_num > 0:
                         log_debug(f"LLM OK on attempt {attempt_num+1} provider={provider['name']} model={model}")
+                    _track_request(provider["name"], True)
                     typing_stop.set()
                     return content
                 
                 # content is None — try next
                 log_debug(f"LLM no content (finish={finish_reason}) attempt {attempt_num+1} {provider['name']}/{model}")
+                _track_request(provider["name"], False)
                 if attempt_num < max_tries - 1:
                     time.sleep(1)
                     continue
@@ -436,6 +528,7 @@ def call_llm(messages, chat_id=None):
         except urllib.error.HTTPError as e:
             error_body = e.read().decode("utf-8", errors="replace")[:300]
             log_error(f"LLM {provider['name']}/{model} HTTP {e.code} (attempt {attempt_num+1}): {error_body}")
+            _track_request(provider["name"], False)
             if e.code in (503, 429, 500, 502, 504) and attempt_num < max_tries - 1:
                 # progressive backoff: 2s, 3s, 4s, 5s...
                 time.sleep(2 + attempt_num)
@@ -607,6 +700,9 @@ def handle_message(update):
                 "🧠 <b>Spiritual</b>: Chakras, Kundalini, Third Eye\n"
                 "💊 <b>Life Problems</b>: Spiritual solutions\n\n"
                 "📸 Photo bhejo — analyze karunga\n\n"
+                "📊 <b>/stats</b> — API usage dekho\n"
+                "🧹 <b>/clear</b> — Chat history clear\n"
+                "📖 <b>/lesson</b> — Today's Gita lesson\n\n"
                 "Bas question type karo — Hinglish ya English!"
             )
             send_message(chat_id, help_text)
@@ -617,6 +713,12 @@ def handle_message(update):
             if cid in conversations:
                 conversations[cid] = []
             send_message(chat_id, "🧹 Conversation history cleared! Naya sawaal poocho. 🪻")
+            return
+        
+        # /stats command — API usage stats
+        if text.strip().lower() == "/stats":
+            stats = get_stats_text()
+            send_message(chat_id, stats)
             return
         
         # /lesson command — manually trigger today's Gita lesson
@@ -776,6 +878,12 @@ class WebhookHandler(BaseHTTPRequestHandler):
                 f"PORT: {PORT}",
                 f"WEBHOOK_URL: {WEBHOOK_URL or '(not set)'}",
                 f"Conversations: {list(conversations.keys())}",
+                f"",
+                f"=== API USAGE (Today) ===",
+                f"Groq: {_usage['groq_requests']} used, {_usage['groq_errors']} errors, {max(0, GROQ_DAILY_LIMIT - _usage['groq_requests'])} remaining",
+                f"Gemini: {_usage['gemini_requests']} used, {_usage['gemini_errors']} errors, {max(0, GEMINI_DAILY_LIMIT - _usage['gemini_requests'])} remaining",
+                f"OpenRouter: {_usage['openrouter_requests']} used, {_usage['openrouter_errors']} errors, {max(0, OPENROUTER_DAILY_LIMIT - _usage['openrouter_requests'])} remaining",
+                f"Total Messages: {_usage['total_messages']}",
                 f"",
                 f"=== RECENT LOGS ===",
             ]
