@@ -237,9 +237,8 @@ def sanitize_html(text):
     text = re.sub(r'</?(?!/?[bius]|/?code|/?pre|/?a\b)[^>]+>', '', text)
     # Collapse excessive newlines (max 3 in a row)
     text = re.sub(r'\n{4,}', '\n\n\n', text)
-    # Telegram message length limit: 4096 chars
-    if len(text) > 4000:
-        text = text[:4000] + "\n\n🪻 — <i>continued...</i>"
+    # NOTE: Do NOT truncate here — send_message() handles splitting long
+    # messages into multiple Telegram messages via send_long_message().
     return text.strip()
 
 def strip_html(text):
