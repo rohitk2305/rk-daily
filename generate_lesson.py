@@ -78,14 +78,50 @@ def get_next_verse(data, progress):
         "day_number": day_number + 1
     }
 
-# ─── LLM Lesson Generator ───
-FALLBACK_MODELS = [
-    "gemini-3.5-flash-lite",
-    "gemini-3.5-flash",
-    "gemini-3.1-flash-lite",
-    "gemini-flash-lite-latest",
-    "gemini-2.5-flash",
-]
+# ─── Multi-Provider Config (same as webhook_bot.py) ───
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+LLM_API_KEY_GL = os.environ.get("LLM_API_KEY", "")
+LLM_BASE_URL_GL = os.environ.get("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai")
+LLM_MODEL_GL = os.environ.get("LLM_MODEL", "gemini-2.5-flash")
+
+PROVIDERS = []
+if GROQ_API_KEY:
+    PROVIDERS.append({
+        "name": "groq",
+        "base_url": "https://api.groq.com/openai/v1",
+        "key": GROQ_API_KEY,
+        "models": ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"],
+    })
+if LLM_API_KEY_GL:
+    gemini_models = [LLM_MODEL_GL] if LLM_MODEL_GL else []
+    for m in ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]:
+        if m not in gemini_models:
+            gemini_models.append(m)
+    PROVIDERS.append({
+        "name": "gemini",
+        "base_url": LLM_BASE_URL_GL,
+        "key": LLM_API_KEY_GL,
+        "models": gemini_models,
+    })
+if OPENROUTER_API_KEY:
+    PROVIDERS.append({
+        "name": "openrouter",
+        "base_url": "https://openrouter.ai/api/v1",
+        "key": OPENROUTER_API_KEY,
+        "models": [
+            "meta-llama/llama-3.3-70b-instruct:free",
+            "google/gemini-2.0-flash-exp:free",
+            "mistralai/mistral-small-3.1-24b-instruct:free",
+        ],
+    })
+if not PROVIDERS and LLM_API_KEY_GL:
+    PROVIDERS.append({
+        "name": "gemini",
+        "base_url": LLM_BASE_URL_GL,
+        "key": LLM_API_KEY_GL,
+        "models": [LLM_MODEL_GL or "gemini-2.5-flash"],
+    })
 
 def _extract_content(result):
     """Safely extract content from LLM response."""
@@ -105,12 +141,8 @@ def _extract_content(result):
         return None
 
 def generate_lesson(verse_data, chapter_data, day_number):
-    api_key = os.environ.get("LLM_API_KEY", "")
-    base_url = os.environ.get("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai")
-    configured_model = os.environ.get("LLM_MODEL", "gemini-3.5-flash-lite")
-
-    if not api_key:
-        print("ERROR: LLM_API_KEY not set")
+    if not PROVIDERS:
+        print("ERROR: No LLM providers configured")
         return None
 
     system_prompt = """You are Agent RK, a wise spiritual guru. Generate a daily Bhagavad Gita lesson in EXACTLY this Telegram HTML format.
@@ -213,28 +245,25 @@ English Meaning: {verse_data["english_meaning"]}
 
 Generate the FULL lesson in the exact format specified in the system prompt."""
 
-    # Build model list: configured model first, then fallbacks (deduped)
-    model_list = []
-    if configured_model and configured_model not in model_list:
-        model_list.append(configured_model)
-    for m in FALLBACK_MODELS:
-        if m not in model_list:
-            model_list.append(m)
+    # Build attempt list: each provider × each model
+    attempts = []
+    for provider in PROVIDERS:
+        for model in provider["models"]:
+            attempts.append((provider, model))
     
-    url = f"{base_url.rstrip('/')}/chat/completions"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
-    }
-    if "openrouter" in base_url.lower():
-        headers["HTTP-Referer"] = "https://github.com/rk-guru/daily"
-        headers["X-Title"] = "RK Daily Gita Lesson"
-    
-    max_attempts = 8
+    max_attempts = min(len(attempts) * 2, 8)
     max_tokens = 8000
     
     for attempt in range(max_attempts):
-        model = model_list[attempt % len(model_list)]
+        provider, model = attempts[attempt % len(attempts)]
+        url = f"{provider['base_url'].rstrip('/')}/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {provider['key']}"
+        }
+        if provider["name"] == "openrouter":
+            headers["HTTP-Referer"] = "https://rk-guru-bot.onrender.com"
+            headers["X-Title"] = "RK Daily Gita Lesson"
         
         payload = {
             "model": model,
@@ -262,27 +291,27 @@ Generate the FULL lesson in the exact format specified in the system prompt."""
                 lesson = _extract_content(result)
                 if lesson and lesson.strip():
                     if attempt > 0:
-                        print(f"✅ Lesson generated on retry {attempt+1} with model={model}")
+                        print(f"✅ Lesson generated on attempt {attempt+1} via {provider['name']}/{model}")
                     return lesson
-                print(f"⚠️ No content (attempt {attempt+1}) model={model}")
+                print(f"⚠️ No content (attempt {attempt+1}) {provider['name']}/{model}")
                 if attempt < max_attempts - 1:
                     time.sleep(1)
                     continue
         except urllib.error.HTTPError as e:
             error_body = e.read().decode("utf-8", errors="replace")
-            print(f"LLM API Error {e.code} (attempt {attempt+1}) model={model}: {error_body[:300]}")
+            print(f"LLM API Error {e.code} (attempt {attempt+1}) {provider['name']}/{model}: {error_body[:300]}")
             if e.code in (503, 429, 500, 502, 504) and attempt < max_attempts - 1:
-                time.sleep(2 + attempt * 2)
+                time.sleep(2 + attempt)
                 continue
             if attempt < max_attempts - 1:
                 continue
         except Exception as e:
-            print(f"LLM API Error (attempt {attempt+1}) model={model}: {e}")
+            print(f"LLM API Error (attempt {attempt+1}) {provider['name']}/{model}: {e}")
             if attempt < max_attempts - 1:
                 time.sleep(2)
                 continue
     
-    print("❌ All LLM retries failed")
+    print("❌ All LLM retries failed across all providers")
     return None
 
 # ─── Fallback Lesson ───

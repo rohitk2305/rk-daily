@@ -45,6 +45,64 @@ LLM_MODEL = os.environ.get("LLM_MODEL", "gemini-3.5-flash")
 PORT = int(os.environ.get("PORT", "8000"))
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL", "")
 
+# ─── Multi-Provider Config (24/7, no single-provider limit) ───
+# Groq: 14,400 req/day FREE — primary provider (get key from console.groq.com)
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+# OpenRouter: free models available — last resort fallback
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+
+# Provider chain: Groq (fastest, highest limit) → Gemini (existing) → OpenRouter (free models)
+# Each provider has its own key, base_url, and model list
+PROVIDERS = []
+
+# 1. Groq — primary (14,400 req/day, Llama 3.3 70B, fastest inference)
+if GROQ_API_KEY:
+    PROVIDERS.append({
+        "name": "groq",
+        "base_url": "https://api.groq.com/openai/v1",
+        "key": GROQ_API_KEY,
+        "models": ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"],
+        "vision": False,  # Groq doesn't support vision yet
+    })
+
+# 2. Gemini — fallback (existing key, ~1,500 req/day, supports vision)
+if LLM_API_KEY:
+    gemini_models = [LLM_MODEL] if LLM_MODEL else []
+    for m in ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"]:
+        if m not in gemini_models:
+            gemini_models.append(m)
+    PROVIDERS.append({
+        "name": "gemini",
+        "base_url": LLM_BASE_URL,
+        "key": LLM_API_KEY,
+        "models": gemini_models,
+        "vision": True,
+    })
+
+# 3. OpenRouter — last resort (free models, ~200 req/day)
+if OPENROUTER_API_KEY:
+    PROVIDERS.append({
+        "name": "openrouter",
+        "base_url": "https://openrouter.ai/api/v1",
+        "key": OPENROUTER_API_KEY,
+        "models": [
+            "meta-llama/llama-3.3-70b-instruct:free",
+            "google/gemini-2.0-flash-exp:free",
+            "mistralai/mistral-small-3.1-24b-instruct:free",
+        ],
+        "vision": True,
+    })
+
+# If no providers configured, fall back to old single-provider mode
+if not PROVIDERS and LLM_API_KEY:
+    PROVIDERS.append({
+        "name": "gemini",
+        "base_url": LLM_BASE_URL,
+        "key": LLM_API_KEY,
+        "models": [LLM_MODEL or "gemini-2.5-flash"],
+        "vision": True,
+    })
+
 # ─── System Prompt (compact for speed) ───
 SYSTEM_PROMPT = """You are Agent RK, a wise spiritual guru mastering ALL Sanatana Dharma: Bhagavad Gita, Vedas, Upanishads, Puranas, Ramayana, Mahabharata, Yoga Sutras, Ayurveda, natural healing, mudras, acupressure, chakras, kundalini, meditation, Vedic Astrology (Jyotish), Numerology (Ank Shastra), gemstones, Rudraksha, mantras, yantras.
 
@@ -271,14 +329,6 @@ def download_file(file_id):
         return None
 
 # ─── LLM Helpers ───
-# Multi-model fallback chain — tries fastest models first, falls back to more capable ones
-FALLBACK_MODELS = [
-    "gemini-3.5-flash-lite",   # fastest, most reliable
-    "gemini-3.5-flash",        # good quality
-    "gemini-3.1-flash-lite",   # backup
-    "gemini-flash-lite-latest", # alias
-    "gemini-2.5-flash",        # last resort
-]
 
 def _extract_content(result):
     """Safely extract content from LLM response. Handles None, missing keys, string responses."""
@@ -302,12 +352,11 @@ def _extract_content(result):
         return None, f"parse_error: {e}"
 
 def call_llm(messages, chat_id=None):
-    """Call LLM with 5-model fallback chain, 8 retries, max_tokens=8000.
-    NEVER shows error messages to user — always returns content or a graceful fallback."""
-    if not LLM_API_KEY:
-        return "LLM API key not configured."
-    
-    url = f"{LLM_BASE_URL.rstrip('/')}/chat/completions"
+    """Call LLM with multi-provider fallback chain.
+    Tries: Groq (14,400/day) → Gemini (1,500/day) → OpenRouter (200/day).
+    NEVER shows error messages to user — always returns content or None."""
+    if not PROVIDERS:
+        return None
     
     # Trim conversation history to last 8 messages for context
     if len(messages) > 10:
@@ -325,19 +374,21 @@ def call_llm(messages, chat_id=None):
         typing_thread = threading.Thread(target=keep_typing, daemon=True)
         typing_thread.start()
     
-    # Build model list: configured model first, then all fallbacks (deduped)
-    model_list = []
-    if LLM_MODEL and LLM_MODEL not in model_list:
-        model_list.append(LLM_MODEL)
-    for m in FALLBACK_MODELS:
-        if m not in model_list:
-            model_list.append(m)
+    max_tokens = 8000
     
-    max_attempts = 8
-    max_tokens = 8000  # high enough to prevent truncation on long responses
+    # Build attempt list: each provider × each model, in priority order
+    # Groq model 1, Groq model 2, Gemini model 1, Gemini model 2, ...
+    attempts = []
+    for provider in PROVIDERS:
+        for model in provider["models"]:
+            attempts.append((provider, model))
     
-    for attempt in range(max_attempts):
-        model = model_list[attempt % len(model_list)]
+    # If we have few attempts, cycle through them more times
+    max_tries = min(len(attempts) * 2, 8)  # up to 8 tries
+    
+    for attempt_num in range(max_tries):
+        provider, model = attempts[attempt_num % len(attempts)]
+        url = f"{provider['base_url'].rstrip('/')}/chat/completions"
         
         payload = {
             "model": model,
@@ -346,7 +397,15 @@ def call_llm(messages, chat_id=None):
             "max_tokens": max_tokens
         }
         data = json.dumps(payload).encode("utf-8")
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {LLM_API_KEY}"}
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {provider['key']}"
+        }
+        # OpenRouter needs extra headers
+        if provider["name"] == "openrouter":
+            headers["HTTP-Referer"] = "https://rk-guru-bot.onrender.com"
+            headers["X-Title"] = "RK Guru Bot"
+        
         req = urllib.request.Request(url, data=data, headers=headers, method="POST")
         
         try:
@@ -355,36 +414,35 @@ def call_llm(messages, chat_id=None):
                 content, finish_reason = _extract_content(result)
                 
                 if content and content.strip():
-                    if attempt > 0:
-                        log_debug(f"LLM OK on retry {attempt+1} model={model} finish={finish_reason}")
+                    if attempt_num > 0:
+                        log_debug(f"LLM OK on attempt {attempt_num+1} provider={provider['name']} model={model}")
                     typing_stop.set()
                     return content
                 
-                # content is None — thinking model or parse error
-                log_debug(f"LLM no content (finish={finish_reason}) attempt {attempt+1} model={model}")
-                if attempt < max_attempts - 1:
+                # content is None — try next
+                log_debug(f"LLM no content (finish={finish_reason}) attempt {attempt_num+1} {provider['name']}/{model}")
+                if attempt_num < max_tries - 1:
                     time.sleep(1)
                     continue
                 else:
-                    log_error(f"LLM no content after all retries")
+                    log_error(f"LLM no content after all {max_tries} attempts")
                     typing_stop.set()
                     return None
                     
         except urllib.error.HTTPError as e:
-            error_body = e.read().decode("utf-8", errors="replace")
-            log_error(f"LLM HTTP {e.code} (attempt {attempt+1}) model={model}: {error_body[:300]}")
-            if e.code in (503, 429, 500, 502, 504) and attempt < max_attempts - 1:
-                # progressive backoff: 2s, 4s, 6s, 8s, 10s, 12s, 14s
-                time.sleep(2 + attempt * 2)
+            error_body = e.read().decode("utf-8", errors="replace")[:300]
+            log_error(f"LLM {provider['name']}/{model} HTTP {e.code} (attempt {attempt_num+1}): {error_body}")
+            if e.code in (503, 429, 500, 502, 504) and attempt_num < max_tries - 1:
+                # progressive backoff: 2s, 3s, 4s, 5s...
+                time.sleep(2 + attempt_num)
                 continue
-            # Non-retryable HTTP error or last attempt — try next model
-            if attempt < max_attempts - 1:
+            if attempt_num < max_tries - 1:
                 continue
             typing_stop.set()
             return None
         except Exception as e:
-            log_error(f"LLM error (attempt {attempt+1}) model={model}: {e}")
-            if attempt < max_attempts - 1:
+            log_error(f"LLM {provider['name']}/{model} error (attempt {attempt_num+1}): {e}")
+            if attempt_num < max_tries - 1:
                 time.sleep(2)
                 continue
             typing_stop.set()
@@ -394,11 +452,12 @@ def call_llm(messages, chat_id=None):
     return None
 
 def call_llm_with_image(user_text, image_bytes, chat_id=None):
-    """Call LLM with image — same multi-model fallback as call_llm."""
-    if not LLM_API_KEY:
-        return "LLM API key not configured."
+    """Call LLM with image — uses vision-capable providers only (Gemini, OpenRouter).
+    Groq doesn't support vision yet, so it's skipped for image queries."""
+    vision_providers = [p for p in PROVIDERS if p.get("vision", False)]
+    if not vision_providers:
+        return None
     
-    url = f"{LLM_BASE_URL.rstrip('/')}/chat/completions"
     image_b64 = base64.b64encode(image_bytes).decode("utf-8")
     data_url = f"data:image/jpeg;base64,{image_b64}"
     
@@ -423,19 +482,20 @@ def call_llm_with_image(user_text, image_bytes, chat_id=None):
         typing_thread = threading.Thread(target=keep_typing, daemon=True)
         typing_thread.start()
     
-    # Build model list: configured model first, then fallbacks (deduped)
-    model_list = []
-    if LLM_MODEL and LLM_MODEL not in model_list:
-        model_list.append(LLM_MODEL)
-    for m in FALLBACK_MODELS:
-        if m not in model_list:
-            model_list.append(m)
-    
-    max_attempts = 8
     max_tokens = 8000
     
-    for attempt in range(max_attempts):
-        model = model_list[attempt % len(model_list)]
+    # Build attempt list from vision-capable providers only
+    attempts = []
+    for provider in vision_providers:
+        for model in provider["models"]:
+            attempts.append((provider, model))
+    
+    max_tries = min(len(attempts) * 2, 8)
+    
+    for attempt_num in range(max_tries):
+        provider, model = attempts[attempt_num % len(attempts)]
+        url = f"{provider['base_url'].rstrip('/')}/chat/completions"
+        
         payload = {
             "model": model,
             "messages": messages,
@@ -443,7 +503,14 @@ def call_llm_with_image(user_text, image_bytes, chat_id=None):
             "max_tokens": max_tokens
         }
         data = json.dumps(payload).encode("utf-8")
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {LLM_API_KEY}"}
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {provider['key']}"
+        }
+        if provider["name"] == "openrouter":
+            headers["HTTP-Referer"] = "https://rk-guru-bot.onrender.com"
+            headers["X-Title"] = "RK Guru Bot"
+        
         req = urllib.request.Request(url, data=data, headers=headers, method="POST")
         
         try:
@@ -453,25 +520,25 @@ def call_llm_with_image(user_text, image_bytes, chat_id=None):
                 if content and content.strip():
                     typing_stop.set()
                     return content
-                log_debug(f"Vision LLM no content (finish={finish_reason}) attempt {attempt+1}")
-                if attempt < max_attempts - 1:
+                log_debug(f"Vision LLM no content (finish={finish_reason}) attempt {attempt_num+1} {provider['name']}/{model}")
+                if attempt_num < max_tries - 1:
                     time.sleep(1)
                     continue
                 typing_stop.set()
                 return None
         except urllib.error.HTTPError as e:
-            error_body = e.read().decode("utf-8", errors="replace")
-            log_error(f"Vision LLM HTTP {e.code} (attempt {attempt+1}) model={model}: {error_body[:300]}")
-            if e.code in (503, 429, 500, 502, 504) and attempt < max_attempts - 1:
-                time.sleep(2 + attempt * 2)
+            error_body = e.read().decode("utf-8", errors="replace")[:300]
+            log_error(f"Vision LLM {provider['name']}/{model} HTTP {e.code} (attempt {attempt_num+1}): {error_body}")
+            if e.code in (503, 429, 500, 502, 504) and attempt_num < max_tries - 1:
+                time.sleep(2 + attempt_num)
                 continue
-            if attempt < max_attempts - 1:
+            if attempt_num < max_tries - 1:
                 continue
             typing_stop.set()
             return None
         except Exception as e:
-            log_error(f"Vision LLM error (attempt {attempt+1}) model={model}: {e}")
-            if attempt < max_attempts - 1:
+            log_error(f"Vision LLM {provider['name']}/{model} error (attempt {attempt_num+1}): {e}")
+            if attempt_num < max_tries - 1:
                 time.sleep(2)
                 continue
             typing_stop.set()
@@ -697,9 +764,12 @@ class WebhookHandler(BaseHTTPRequestHandler):
                 f"=== RK BOT DEBUG ===",
                 f"BOT_TOKEN: {'set' if BOT_TOKEN else 'MISSING'}",
                 f"AUTHORIZED_CHAT_ID: {AUTHORIZED_CHAT_ID or 'MISSING'}",
-                f"LLM_API_KEY: {'set' if LLM_API_KEY else 'MISSING'}",
+                f"LLM_API_KEY (Gemini): {'set' if LLM_API_KEY else 'MISSING'}",
                 f"LLM_MODEL: {LLM_MODEL}",
                 f"LLM_BASE_URL: {LLM_BASE_URL}",
+                f"GROQ_API_KEY: {'set' if GROQ_API_KEY else 'MISSING'}",
+                f"OPENROUTER_API_KEY: {'set' if OPENROUTER_API_KEY else 'MISSING'}",
+                f"Providers: {[p['name'] + '/' + p['models'][0] for p in PROVIDERS]}",
                 f"PORT: {PORT}",
                 f"WEBHOOK_URL: {WEBHOOK_URL or '(not set)'}",
                 f"Conversations: {list(conversations.keys())}",
@@ -762,7 +832,7 @@ def main():
     print("=" * 50)
     print(f"Port: {PORT}")
     print(f"Webhook URL: {WEBHOOK_URL or '(not set)'}")
-    print(f"Model: {LLM_MODEL}")
+    print(f"Providers: {[p['name'] + '/' + p['models'][0] for p in PROVIDERS]}")
     print(f"Chat ID: {AUTHORIZED_CHAT_ID}")
     print()
     
