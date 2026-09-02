@@ -374,7 +374,7 @@ def call_llm(messages, chat_id=None):
         typing_thread = threading.Thread(target=keep_typing, daemon=True)
         typing_thread.start()
     
-    max_tokens = 8000
+    max_tokens = 4000
     
     # Build attempt list: each provider × each model, in priority order
     # Groq model 1, Groq model 2, Gemini model 1, Gemini model 2, ...
@@ -390,11 +390,13 @@ def call_llm(messages, chat_id=None):
         provider, model = attempts[attempt_num % len(attempts)]
         url = f"{provider['base_url'].rstrip('/')}/chat/completions"
         
+        # Groq free tier: 8000 TPM — use smaller max_tokens to avoid 413
+        provider_max = 3000 if provider["name"] == "groq" else max_tokens
         payload = {
             "model": model,
             "messages": messages,
             "temperature": 0.5,
-            "max_tokens": max_tokens
+            "max_tokens": provider_max
         }
         data = json.dumps(payload).encode("utf-8")
         headers = {
@@ -483,7 +485,7 @@ def call_llm_with_image(user_text, image_bytes, chat_id=None):
         typing_thread = threading.Thread(target=keep_typing, daemon=True)
         typing_thread.start()
     
-    max_tokens = 8000
+    max_tokens = 4000
     
     # Build attempt list from vision-capable providers only
     attempts = []
@@ -497,11 +499,12 @@ def call_llm_with_image(user_text, image_bytes, chat_id=None):
         provider, model = attempts[attempt_num % len(attempts)]
         url = f"{provider['base_url'].rstrip('/')}/chat/completions"
         
+        provider_max = 3000 if provider["name"] == "groq" else max_tokens
         payload = {
             "model": model,
             "messages": messages,
             "temperature": 0.5,
-            "max_tokens": max_tokens
+            "max_tokens": provider_max
         }
         data = json.dumps(payload).encode("utf-8")
         headers = {

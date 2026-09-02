@@ -252,19 +252,21 @@ Generate the FULL lesson in the exact format specified in the system prompt."""
             attempts.append((provider, model))
     
     max_attempts = min(len(attempts) * 2, 8)
-    max_tokens = 8000
+    max_tokens = 4000
     
     for attempt in range(max_attempts):
         provider, model = attempts[attempt % len(attempts)]
         url = f"{provider['base_url'].rstrip('/')}/chat/completions"
         headers = {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {provider['key']}"
+            "Authorization": f"Bearer {provider['key']}",
+            "User-Agent": "RK-Guru-Bot/1.0"
         }
         if provider["name"] == "openrouter":
             headers["HTTP-Referer"] = "https://rk-guru-bot.onrender.com"
             headers["X-Title"] = "RK Daily Gita Lesson"
         
+        provider_max = 3000 if provider["name"] == "groq" else max_tokens
         payload = {
             "model": model,
             "messages": [
@@ -280,7 +282,7 @@ Generate the FULL lesson in the exact format specified in the system prompt."""
                 {"role": "user", "content": user_prompt}
             ],
             "temperature": 0.7,
-            "max_tokens": max_tokens
+            "max_tokens": provider_max
         }
         data = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(url, data=data, headers=headers, method="POST")
