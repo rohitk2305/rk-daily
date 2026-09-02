@@ -399,7 +399,8 @@ def call_llm(messages, chat_id=None):
         data = json.dumps(payload).encode("utf-8")
         headers = {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {provider['key']}"
+            "Authorization": f"Bearer {provider['key']}",
+            "User-Agent": "RK-Guru-Bot/1.0"
         }
         # OpenRouter needs extra headers
         if provider["name"] == "openrouter":
@@ -505,7 +506,8 @@ def call_llm_with_image(user_text, image_bytes, chat_id=None):
         data = json.dumps(payload).encode("utf-8")
         headers = {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {provider['key']}"
+            "Authorization": f"Bearer {provider['key']}",
+            "User-Agent": "RK-Guru-Bot/1.0"
         }
         if provider["name"] == "openrouter":
             headers["HTTP-Referer"] = "https://rk-guru-bot.onrender.com"
