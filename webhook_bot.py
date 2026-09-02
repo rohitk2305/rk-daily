@@ -61,7 +61,7 @@ if GROQ_API_KEY:
         "name": "groq",
         "base_url": "https://api.groq.com/openai/v1",
         "key": GROQ_API_KEY,
-        "models": ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"],
+        "models": ["openai/gpt-oss-120b", "groq/compound", "openai/gpt-oss-20b", "groq/compound-mini"],
         "vision": False,  # Groq doesn't support vision yet
     })
 
