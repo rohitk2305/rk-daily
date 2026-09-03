@@ -939,25 +939,27 @@ def handle_message(update):
 last_lesson_date = None
 
 def daily_lesson_checker():
-    """Background thread that checks every 60s if it's 7 AM IST.
-    Window: 7:00-7:59 AM IST. NO startup catch-up — only scheduled delivery."""
+    """Background thread that checks every 60s if it's 7-11 AM IST.
+    Wide window: 7:00-11:00 AM IST. NO startup catch-up.
+    Render free tier sleeps after 15min idle — webhook/GA cron wakes it.
+    When it wakes up during 7-11 AM window, it sends the lesson."""
     global last_lesson_date
     # Load today's date to prevent re-sending if already sent today
     now_ist = datetime.now(IST)
     today = now_ist.strftime("%Y-%m-%d")
-    # Mark today as "seen" on startup if it's already past 7 AM
-    # This prevents sending a lesson every time Render wakes up
-    if now_ist.hour >= 7:
+    # Mark today as "seen" on startup if it's already past 11 AM
+    # (past the delivery window — no point sending today's lesson late)
+    if now_ist.hour >= 11:
         last_lesson_date = today
-        print(f"[Daily Lesson] Past 7 AM on startup — marking {today} as done. No catch-up spam.")
+        print(f"[Daily Lesson] Past 11 AM on startup — marking {today} as done. No catch-up spam.")
     
     while True:
         try:
             now_ist = datetime.now(IST)
             today = now_ist.strftime("%Y-%m-%d")
-            # 7:00-7:59 AM IST window — wide window so even if Render wakes up late, it still fires
-            if now_ist.hour == 7 and last_lesson_date != today:
-                print(f"[Daily Lesson] Sending Gita lesson for {today}...")
+            # 7:00-10:59 AM IST window — wide so Render can wake up any time and fire
+            if 7 <= now_ist.hour <= 10 and last_lesson_date != today:
+                print(f"[Daily Lesson] Sending Gita lesson for {today} at {now_ist.strftime('%H:%M')} IST...")
                 send_daily_lesson()
                 last_lesson_date = today
         except Exception as e:

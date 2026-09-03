@@ -147,7 +147,7 @@ def generate_lesson(verse_data, chapter_data, day_number):
 
     system_prompt = """You are Agent RK, a wise spiritual guru. Generate a daily Bhagavad Gita lesson in EXACTLY this Telegram HTML format.
 
-KEEP IT SHORT AND POINT-WISE. No long paragraphs. Use simple language. Each section should be bullet points or 1-2 line answers.
+EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only or English-only. Both languages side by side.
 
 🪻 <b>RK DAILY</b>
 <i>Daily Wisdom from Sanatana Dharma</i>
@@ -177,51 +177,86 @@ KEEP IT SHORT AND POINT-WISE. No long paragraphs. Use simple language. Each sect
 • Simple meaning in 1-2 bullet points
 • Context — when and why it was spoken
 
-🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL</b>
-• <b>Situation:</b> [Modern real-life situation matching this verse — office, family, relationships, stress, failure, competition, etc.]
-• <b>Problem:</b> [What problem arises in this situation]
-• <b>How to handle:</b> [Step-by-step how to deal with it using this verse's wisdom — 2-3 bullet points]
-• <b>Result:</b> [What happens when you apply this wisdom]
+🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL (HINGLISH)</b>
+• <b>Situation:</b> [Modern real-life situation matching this verse — office, family, relationships, stress, failure, competition, etc. — in HINGLISH]
+• <b>Problem:</b> [What problem arises — in HINGLISH]
+• <b>How to handle:</b> [Step-by-step how to deal with it — 2-3 bullet points — in HINGLISH]
+• <b>Result:</b> [What happens when you apply this wisdom — in HINGLISH]
+
+🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL (ENGLISH)</b>
+• <b>Situation:</b> [Same situation — in ENGLISH]
+• <b>Problem:</b> [Same problem — in ENGLISH]
+• <b>How to handle:</b> [Same steps — in ENGLISH]
+• <b>Result:</b> [Same result — in ENGLISH]
 
 🦹🏹🦊 <b>3 LORDS — REAL LIFE EXAMPLES &amp; MINDSET</b>
 
-🦹 <b>Krishna Ji — Real Situation &amp; Mindset</b>
-• <b>Their real situation:</b> [Actual event from Krishna's life that matches this verse — e.g. Kurukshetra, Draupadi's disrobing, killing Kansa, etc.]
-• <b>How Krishna dealt with it:</b> [What Krishna actually did in that situation — 1-2 points]
-• <b>Krishna Mindset to adopt:</b> [What mindset Krishna used — how YOU can think like Krishna in your life]
+🦹 <b>Krishna Ji — Hinglish</b>
+• <b>Their real situation:</b> [Actual event from Krishna's life — in HINGLISH]
+• <b>How Krishna dealt with it:</b> [What Krishna did — in HINGLISH]
+• <b>Krishna Mindset to adopt:</b> [How YOU can think like Krishna — in HINGLISH]
 
-🏹 <b>Rama Ji — Real Situation &amp; Mindset</b>
-• <b>Their real situation:</b> [Actual event from Rama's life that matches this verse — e.g. exile, Sita's abduction, killing Ravana, leaving Sita, etc.]
-• <b>How Rama dealt with it:</b> [What Rama actually did — 1-2 points]
-• <b>Rama Mindset to adopt:</b> [What mindset Rama used — how YOU can think like Rama in your life]
+🦹 <b>Krishna Ji — English</b>
+• <b>Their real situation:</b> [Same event — in ENGLISH]
+• <b>How Krishna dealt with it:</b> [What Krishna did — in ENGLISH]
+• <b>Krishna Mindset to adopt:</b> [How YOU can think like Krishna — in ENGLISH]
 
-🦊 <b>Hanuman Ji — Real Situation &amp; Mindset</b>
-• <b>Their real situation:</b> [Actual event from Hanuman's life that matches this verse — e.g. jumping to Lanka, carrying mountain, opening chest showing Rama, burning Lanka, etc.]
-• <b>How Hanuman dealt with it:</b> [What Hanuman actually did — 1-2 points]
-• <b>Hanuman Mindset to adopt:</b> [What mindset Hanuman used — how YOU can think like Hanuman in your life]
+🏹 <b>Rama Ji — Hinglish</b>
+• <b>Their real situation:</b> [Actual event from Rama's life — in HINGLISH]
+• <b>How Rama dealt with it:</b> [What Rama did — in HINGLISH]
+• <b>Rama Mindset to adopt:</b> [How YOU can think like Rama — in HINGLISH]
 
- 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA</b>
-• <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai..." [Krishna explains this verse to Hanuman and Rama in a simple teaching dialogue — 2-3 lines]
-• <b>Hanuman asks:</b> "Prabhu, main isse apne jivan mein kaise lagaoon?" [Hanuman asks a practical question about applying this]
-• <b>Krishna answers:</b> [Krishna gives a simple practical answer — 1-2 lines]
-• <b>Rama adds:</b> "Hanuman, ye bhi yaad rakh..." [Rama adds one more insight — 1 line]
+🏹 <b>Rama Ji — English</b>
+• <b>Their real situation:</b> [Same event — in ENGLISH]
+• <b>How Rama dealt with it:</b> [What Rama did — in ENGLISH]
+• <b>Rama Mindset to adopt:</b> [How YOU can think like Rama — in ENGLISH]
 
-🎯 <b>TODAY'S SADHANA — MAKE MINDSET LIKE 3 LORDS</b>
-• Think like Krishna: [one practical step for today]
-• Act like Rama: [one practical step for today]
-• Serve like Hanuman: [one practical step for today]
+🦊 <b>Hanuman Ji — Hinglish</b>
+• <b>Their real situation:</b> [Actual event from Hanuman's life — in HINGLISH]
+• <b>How Hanuman dealt with it:</b> [What Hanuman did — in HINGLISH]
+• <b>Hanuman Mindset to adopt:</b> [How YOU can think like Hanuman — in HINGLISH]
 
-🧠 <b>REMEMBER</b>
-"[Short inspiring quote — 1 line]"
+🦊 <b>Hanuman Ji — English</b>
+• <b>Their real situation:</b> [Same event — in ENGLISH]
+• <b>How Hanuman dealt with it:</b> [What Hanuman did — in ENGLISH]
+• <b>Hanuman Mindset to adopt:</b> [How YOU can think like Hanuman — in ENGLISH]
+
+🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (HINGLISH)</b>
+• <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai..." [Krishna explains — in HINGLISH]
+• <b>Hanuman asks:</b> "Prabhu, main isse apne jivan mein kaise lagaoon?" [In HINGLISH]
+• <b>Krishna answers:</b> [Practical answer — in HINGLISH]
+• <b>Rama adds:</b> "Hanuman, ye bhi yaad rakh..." [One more insight — in HINGLISH]
+
+🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (ENGLISH)</b>
+• <b>Krishna says:</b> "Hanuman, the meaning of this verse is..." [Same explanation — in ENGLISH]
+• <b>Hanuman asks:</b> "Lord, how can I apply this in my life?" [In ENGLISH]
+• <b>Krishna answers:</b> [Same practical answer — in ENGLISH]
+• <b>Rama adds:</b> "Hanuman, also remember..." [Same insight — in ENGLISH]
+
+🎯 <b>TODAY'S SADHANA (HINGLISH)</b>
+• Krishna ki tarah socho: [aaj ka practical step — HINGLISH]
+• Rama ki tarah karo: [aaj ka practical step — HINGLISH]
+• Hanuman ki tarah seva karo: [aaj ka practical step — HINGLISH]
+
+🎯 <b>TODAY'S SADHANA (ENGLISH)</b>
+• Think like Krishna: [same practical step — ENGLISH]
+• Act like Rama: [same practical step — ENGLISH]
+• Serve like Hanuman: [same practical step — ENGLISH]
+
+🧠 <b>REMEMBER (HINGLISH)</b>
+"[Short inspiring quote in HINGLISH — 1 line]"
+
+🧠 <b>REMEMBER (ENGLISH)</b>
+"[Same inspiring quote in ENGLISH — 1 line]"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🤖 Agent RK — Your Spiritual Guide
 <i>For questions, just reply here</i>
 
 CRITICAL RULES:
-- SHORT and POINT-WISE — NO long paragraphs anywhere
+- EVERY section must appear in BOTH Hinglish AND English — no exceptions
+- Keep each language version short and point-wise — bullet points only
 - Simple language — as if explaining to a 15 year old
-- Every section must be bullet points (•) or 1-2 line answers only
 - REAL situations from Krishna, Rama, and Hanuman's actual lives (from scriptures) — not generic advice
 - Krishna teaching Hanuman section must feel like a real conversation — dialogue format
 - Show HOW each Lord dealt with similar situations in THEIR life, then tell reader how to adopt that SAME mindset
@@ -229,7 +264,7 @@ CRITICAL RULES:
 - Do NOT use Markdown (*, _, `) — only HTML tags
 - Escape &amp; as &amp;amp;, < as &amp;lt;, > as &amp;gt; in text content (but keep HTML tags intact)
 - Keep the EXACT format above with all emojis and separators
-- The entire message should be 2000-3500 characters
+- The entire message should be 3000-5000 characters (it's longer because it's bilingual)
 - Do NOT add any text before or after the formatted lesson"""
 
     user_prompt = f"""Generate the daily lesson for:
@@ -266,7 +301,7 @@ Generate the FULL lesson in the exact format specified in the system prompt."""
             headers["HTTP-Referer"] = "https://rk-guru-bot.onrender.com"
             headers["X-Title"] = "RK Daily Gita Lesson"
         
-        provider_max = 3000 if provider["name"] == "groq" else max_tokens
+        provider_max = 4000  # bilingual lessons need more tokens
         payload = {
             "model": model,
             "messages": [
@@ -346,49 +381,85 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 • Do your duty, surrender results to God
 • Arjuna was afraid to fight, Krishna taught this wisdom
 
-🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL</b>
+🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL (HINGLISH)</b>
 • <b>Situation:</b> Office mein project par kaam karo, promotion ka result nahi tumhare haath mein
 • <b>Problem:</b> Result ki chinta se kaam kharab hota hai, stress badhta hai
 • <b>How to handle:</b> Best effort do, result ko Bhagwan par chhod do, daily kaam se pyaar karo
 • <b>Result:</b> Mind shant rahega, kaam better hoga, success apne aap aayega
 
+🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL (ENGLISH)</b>
+• <b>Situation:</b> Work on your project, but the promotion result is not in your hands
+• <b>Problem:</b> Worrying about results ruins the work and increases stress
+• <b>How to handle:</b> Give your best effort, surrender results to God, love the daily work
+• <b>Result:</b> Mind stays calm, work improves, success comes naturally
+
 🦹🏹🦊 <b>3 LORDS — REAL LIFE EXAMPLES &amp; MINDSET</b>
 
-🦹 <b>Krishna Ji — Real Situation &amp; Mindset</b>
+🦹 <b>Krishna Ji — Hinglish</b>
 • <b>Their real situation:</b> Kurukshetra mein Arjuna ka rath chalaya, khud fight nahi kiya
 • <b>How Krishna dealt:</b> Sirf guide kiya, karma kiya bina phal ki chinta
 • <b>Krishna Mindset to adopt:</b> Apna role samjho, best do, result chhod do
 
-🏹 <b>Rama Ji — Real Situation &amp; Mindset</b>
+🦹 <b>Krishna Ji — English</b>
+• <b>Their real situation:</b> Drove Arjuna's chariot at Kurukshetra, did not fight himself
+• <b>How Krishna dealt:</b> Only guided, acted without worrying about results
+• <b>Krishna Mindset to adopt:</b> Know your role, do your best, surrender results
+
+🏹 <b>Rama Ji — Hinglish</b>
 • <b>Their real situation:</b> 14 saal vanvaas gaya bina complaint kiye
 • <b>How Rama dealt:</b> Dharma follow kiya, acceptance se jiya, kingdom ka tyag kiya
 • <b>Rama Mindset to adopt:</b> Jo situation hai us accept karo, dharma se mat hato
 
-🦊 <b>Hanuman Ji — Real Situation &amp; Mindset</b>
+🏹 <b>Rama Ji — English</b>
+• <b>Their real situation:</b> Went into 14-year exile without complaint
+• <b>How Rama dealt:</b> Followed dharma, lived with acceptance, gave up kingdom
+• <b>Rama Mindset to adopt:</b> Accept your situation, never abandon dharma
+
+🦊 <b>Hanuman Ji — Hinglish</b>
 • <b>Their real situation:</b> Lanka jaake Sita mata ko dhoondha, puri impossible task
 • <b>How Hanuman dealt:</b> Bina result ke soche, Rama ke naam se sab kiya
 • <b>Hanuman Mindset to adopt:</b> Seva bhaav se kaam karo, impossible nahi kuch bhi
 
-🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA</b>
+🦊 <b>Hanuman Ji — English</b>
+• <b>Their real situation:</b> Went to Lanka to find Sita mata, a seemingly impossible task
+• <b>How Hanuman dealt:</b> Acted without worrying about results, did everything in Rama's name
+• <b>Hanuman Mindset to adopt:</b> Work with spirit of service, nothing is impossible
+
+🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (HINGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai — karma kar, phal mat soch. Tumne Lanka mein same kiya tha."
 • <b>Hanuman asks:</b> "Prabhu, main result bilkul na sochun toh motivation kahan se aaye?"
 • <b>Krishna answers:</b> "Motivation result se nahi, SEVA se aati hai. Tum mera naam leke udi the, wahi karo."
 • <b>Rama adds:</b> "Hanuman, dharma ka kaam apna reward hota hai."
 
-🎯 <b>TODAY'S SADHANA — MAKE MINDSET LIKE 3 LORDS</b>
-• Think like Krishna: Aaj ek decision bina result ke chinta lo
-• Act like Rama: Jo difficult hai us accept karke kar do
-• Serve like Hanuman: Kisi ki bina expectation madad karo
+🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (ENGLISH)</b>
+• <b>Krishna says:</b> "Hanuman, the meaning of this verse is — do your duty, don't think of results. You did the same in Lanka."
+• <b>Hanuman asks:</b> "Lord, if I don't think of results at all, where will motivation come from?"
+• <b>Krishna answers:</b> "Motivation comes from SERVICE, not results. You flew in my name — do the same."
+• <b>Rama adds:</b> "Hanuman, the act of dharma is its own reward."
 
-🧠 <b>REMEMBER</b>
+🎯 <b>TODAY'S SADHANA (HINGLISH)</b>
+• Krishna ki tarah socho: Aaj ek decision bina result ke chinta lo
+• Rama ki tarah karo: Jo difficult hai us accept karke kar do
+• Hanuman ki tarah seva karo: Kisi ki bina expectation madad karo
+
+🎯 <b>TODAY'S SADHANA (ENGLISH)</b>
+• Think like Krishna: Make one decision today without worrying about the result
+• Act like Rama: Accept what is difficult and do it
+• Serve like Hanuman: Help someone without any expectation
+
+🧠 <b>REMEMBER (HINGLISH)</b>
 "Karma kar, phal ki chinta mat kar. Bhagwan sab kuch dekh raha hai."
+
+🧠 <b>REMEMBER (ENGLISH)</b>
+"Do your duty, don't worry about results. God is watching everything."
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🤖 Agent RK — Your Spiritual Guide"""
 
 # ─── Telegram Sender ───
 def send_telegram(message):
-    """Send message via Telegram Bot API (100% free, no limits)."""
+    """Send message via Telegram Bot API (100% free, no limits).
+    Splits into multiple messages if >4096 chars (Telegram limit)."""
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "") or os.environ.get("BOT_TOKEN", "")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "") or os.environ.get("AUTHORIZED_CHAT_ID", "")
 
@@ -396,41 +467,62 @@ def send_telegram(message):
         print("ERROR: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set")
         sys.exit(1)
 
-    url = f"https://api.telegram.org/bot{token}/sendMessage"
-
-    # Telegram supports HTML formatting (more reliable than Markdown)
-    payload = {
-        "chat_id": chat_id,
-        "text": message,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": True
-    }
-
-    data = json.dumps(payload).encode("utf-8")
-    headers = {"Content-Type": "application/json"}
-    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
-
-    try:
-        with urllib.request.urlopen(req, timeout=60) as response:
-            result = json.loads(response.read().decode("utf-8"))
-            if result.get("ok"):
-                print("✅ Telegram message sent successfully!")
-                return True
+    # Split message into chunks of <=4000 chars (safe margin under 4096 limit)
+    # Try to split on line boundaries to avoid breaking HTML tags
+    MAX_LEN = 4000
+    if len(message) <= MAX_LEN:
+        chunks = [message]
+    else:
+        chunks = []
+        lines = message.split('\n')
+        current = ""
+        for line in lines:
+            if len(current) + len(line) + 1 > MAX_LEN:
+                if current:
+                    chunks.append(current)
+                current = line
             else:
-                print(f"⚠️ Telegram API error: {result}")
-                # Retry without Markdown if parsing failed
-                return retry_without_markdown(token, chat_id, message)
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode("utf-8", errors="replace")
-        print(f"Telegram Error {e.code}: {error_body[:500]}")
-        # Try without markdown
-        if e.code == 400:
-            print("Retrying without Markdown formatting...")
-            return retry_without_markdown(token, chat_id, message)
-        sys.exit(1)
-    except Exception as e:
-        print(f"Telegram Error: {e}")
-        sys.exit(1)
+                current = current + '\n' + line if current else line
+        if current:
+            chunks.append(current)
+    
+    print(f"📤 Sending {len(chunks)} message(s) to Telegram...")
+    
+    for i, chunk in enumerate(chunks):
+        url = f"https://api.telegram.org/bot{token}/sendMessage"
+        payload = {
+            "chat_id": chat_id,
+            "text": chunk,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True
+        }
+
+        data = json.dumps(payload).encode("utf-8")
+        headers = {"Content-Type": "application/json"}
+        req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+
+        try:
+            with urllib.request.urlopen(req, timeout=60) as response:
+                result = json.loads(response.read().decode("utf-8"))
+                if result.get("ok"):
+                    print(f"✅ Telegram message {i+1}/{len(chunks)} sent successfully!")
+                else:
+                    print(f"⚠️ Telegram API error on chunk {i+1}: {result}")
+                    # Retry without HTML for this chunk
+                    retry_without_markdown(token, chat_id, chunk)
+        except urllib.error.HTTPError as e:
+            error_body = e.read().decode("utf-8", errors="replace")
+            print(f"Telegram Error {e.code} on chunk {i+1}: {error_body[:500]}")
+            if e.code == 400:
+                print("Retrying without HTML formatting...")
+                retry_without_markdown(token, chat_id, chunk)
+            else:
+                sys.exit(1)
+        except Exception as e:
+            print(f"Telegram Error on chunk {i+1}: {e}")
+            sys.exit(1)
+    
+    return True
 
 def retry_without_markdown(token, chat_id, message):
     """Retry sending without HTML if formatting caused errors."""
