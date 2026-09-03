@@ -206,22 +206,58 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 • <b>Result:</b> [Same result — in ENGLISH]
 
 ⚔️ <b>KALIYUG MEIN ADHARMI LOGO SE KAISE DEAL KAREIN (HINGLISH)</b>
-• <b>Gali dene wale (verbal abusers):</b> [Is verse ke context mein kaise deal karein — Hinglish. Important words <b>bold</b> karo]
-• <b>Chedne wale (harassers):</b> [Is verse ke context mein — Hinglish]
-• <b>Chalak log jo doosre ka pair khich ke upar jaane wale:</b> [Hinglish — verse se connect karke]
-• <b>Zyada buddhi laga ke galat kaam karne wale (manipulators):</b> [Hinglish — verse se connect]
-• <b>Dharam ke raste mein aane walo ko rokne wale (obstacles on dharma path):</b> [Hinglish]
-• <b>Apna dharam nibhate hue aage kaise badho:</b> [Practical guidance — Hinglish]
-• <b>Krishna/Rama/Hanuman ji ka updesha:</b> [Is verse ke context mein teeno Lord kya kehenge — Hinglish]
+<i>Krishna, Rama aur Hanuman ji ki seekh par based — Gita ke is verse se solution</i>
+
+• <b>Gali dene wale (verbal abusers):</b> [Is verse ke context mein kaise deal karein — Hinglish. <b>Important words bold karo</b>. Krishna kehte hain — unka gali unka karma hai, tumhara nahi. <b>Ignor</b> karo, apne dharam pe tike raho]
+• <b>Chedne wale (direct harassers):</b> [Hinglish — <b>dhairya</b> rakho, lekin zaroorat ho toh <b>boundaries</b> set karo. Hanuman ji bhi bina kaaran nahi ladte the]
+• <b>Indirect chedne wale (chidhane wale, taunters):</b> [Hinglish — jo indirectly chidhate hain, unki baaton pe <b>reaction</b> mat do. Krishna ne Kans ke threats ko bhi <b>ignor</b> kiya tha. <b>Vairagya</b> se kaam lo]
+• <b>Hasne wale (mockers who laugh at you):</b> [Hinglish — tum dharam par chal rahe ho aur log <b>hasate</b> hain. Krishna ko bhi hasaya gaya tha. <b>Hansaane walo ko igno</b> karo — unka hasna unki samajh ki kami hai. <b>Tumhara marg tumhara hai</b>]
+• <b>Ulta-sulta bolne wale (contradictory speakers):</b> [Hinglish — jo ulta bolte hain, confuse karte hain. <b>Buddhi</b> se unki baat ko pehchano. Krishna kehte hain — <b>vivek</b> se sach ko alag karo. Unki baaton mein mat phanso]
+• <b>Gali dekh ke harkat karne wale (gesture provokers):</b> [Hinglish — jo dekh ke <b>harkat</b> karte hain, ishara karte hain. <b>Aankh neeche mat jhukao</b>. Hanuman ji jaisa <b> fearless</b> raho. Unki harkat unki gireez hai]
+• <b>Raste se jaate hue chedna (passing-by teasers):</b> [Hinglish — raste se jaate hue log chedte hain. <b>Aage badho</b> — peeche mat dekho. Rama ne <b>vanvas</b> mein bahut logo ka apmaan sehka, bina ruke aage badhe]
+• <b>Chalak log jo doosre ka pair khich ke upar jaate hain:</b> [Hinglish — unse <b>door</b> raho. Apna kaam <b>karma</b> se karo. Unki chaal unki problem hai]
+• <b>Manipulators (zyada buddhi galat use karne wale):</b> [Hinglish — <b>buddhi</b> ka upyog karo. Hanuman ji jaise — unki buddhi ko apni <b>buddhi</b> se pehchano]
+• <b>Dharam rokné wale (pura duniya against ho):</b> [Hinglish — jab <b>puri duniya</b> against ho, tab bhi <b>dharam</b> ke liye khade raho. Arjuna ne puri sena dekhi, darr laga, phir bhi Krishna kehte hain — <b>khade raho</b>. Rama ne <b>Kaikeyi</b> ke aage bhi dharma nahi chhoda]
+• <b>Apna dharam nibhate hue aage kaise badho:</b> [Hinglish — <b>purpose</b> pe focus, <b>fearless</b> raho, <b>karma</b> karte raho]
+• <b>Krishna/Rama/Hanuman ji ka updesha:</b> [Is verse ke context mein teeno Lord kya kehenge — Hinglish. <b>Calm</b>, <b>fearless</b>, <b>dharma-focused</b> raho]
 
 ⚔️ <b>DEALING WITH ADHARMIC PEOPLE IN KALIYUG (ENGLISH)</b>
-• <b>Verbal abusers (those who abuse):</b> [How to deal in this verse's context — English. <b>Highlight</b> key words]
-• <b>Harassers:</b> [Verse context — English]
-• <b>Cunning people who step on others to rise:</b> [English — connect to verse]
-• <b>Manipulators who use intelligence for wrong deeds:</b> [English — connect to verse]
-• <b>Those who block the path of dharma:</b> [English]
-• <b>How to move forward while staying on dharma:</b> [Practical guidance — English]
-• <b>Krishna/Rama/Hanuman ji's guidance:</b> [What the three Lords would say in this verse's context — English]
+<i>Based on teachings of Krishna, Rama and Hanuman ji — solution from this Gita verse</i>
+
+• <b>Verbal abusers (those who abuse):</b> [How to deal in this verse's context — English. <b>Highlight key words</b>. Krishna says — their abuse is their karma, not yours. <b>Ignore</b> them]
+• <b>Direct harassers:</b> [English — maintain <b>patience</b>, but set <b>boundaries</b> when needed]
+• <b>Indirect taunters (those who provoke indirectly):</b> [English — don't <b>react</b> to their indirect taunts. Krishna ignored Kans's threats too. Use <b>detachment</b>]
+• <b>Mockers (those who laugh at you):</b> [English — you walk on dharma and people <b>laugh</b>. Krishna was laughed at too. <b>Ignore the mockers</b> — their laughter shows their ignorance. <b>Your path is yours</b>]
+• <b>Contradictory speakers (those who say opposite things):</b> [English — use <b>wisdom</b> to identify truth. Krishna says — use <b>discrimination</b> to separate truth from lies. Don't get trapped]
+• <b>Gesture provokers (those who make gestures looking at you):</b> [English — <b>don't lower your eyes</b>. Be <b>fearless</b> like Hanuman ji. Their gestures show their downfall]
+• <b>Passing-by teasers:</b> [English — <b>move forward</b> — don't look back. Rama faced many insults in <b>exile</b>, yet moved forward without stopping]
+• <b>Cunning people who step on others to rise:</b> [English — stay <b>away</b> from them. Do your work through <b>karma</b>]
+• <b>Manipulators who use intelligence for wrong deeds:</b> [English — use your <b>wisdom</b>. Like Hanuman ji — recognize their intelligence with your intelligence]
+• <b>Those who block dharma (even if the whole world is against you):</b> [English — when <b>the whole world</b> is against you, still <b>stand for dharma</b>. Arjuna saw the entire army, was afraid, yet Krishna says — <b>stand firm</b>. Rama didn't abandon dharma even before <b>Kaikeyi</b>]
+• <b>How to move forward while staying on dharma:</b> [English — focus on <b>purpose</b>, stay <b>fearless</b>, keep doing <b>karma</b>]
+• <b>Krishna/Rama/Hanuman ji's guidance:</b> [What the three Lords would say — English. Stay <b>calm</b>, <b>fearless</b>, <b>dharma-focused</b>]
+
+🧘 <b>ANTAR SHANTI — STRESS, DEPRESSION, ANXIETY SE KAISE BACHEIN (HINGLISH)</b>
+<i>Gita ke is verse se — Krishna tumhe sikhate hain</i>
+
+• <b>Stress kyon aata hai:</b> [Hinglish — is verse ke context mein. Stress tab aata hai jab hum <b>phal</b> ke baare mein sochte hain, <b>karma</b> chhod kar]
+• <b>Krishna ka updesha:</b> [Hinglish — Krishna kehte hain — <b>karma</b> pe focus rakh, <b>phal</b> pe nahi. Tab stress <b>khatam</b> hoga]
+• <b>Depression se bachna:</b> [Hinglish — jab lage sab kuch khatam ho raha hai, tab <b>dharam</b> yaad rakho. Arjuna ne bhi <b>vishad</b> (depression) mein tha, Krishna ne <b>Gita</b> di]
+• <b>Anxiety se bachna:</b> [Hinglish — <b>future</b> ki chinta anxiety deti hai. Krishna kehte hain — <b>vartaman</b> mein jiyo, <b>aaj</b> ka karma karo]
+• <b>Andar se disturb na hona:</b> [Hinglish — bahar koi bhi situation ho, <b>andar shant</b> raho. Hanuman ji hamesha <b>shant</b> the, chahe koi bhi situation ho]
+• <b>Gita ka solution:</b> [Hinglish — is verse ka <b>core message</b> — stress, depression, anxiety se bachne ke liye Gita kya kehti hai. <b>Bold</b> mein important words]
+• <b>3 Lords ki seekh:</b> [Hinglish — Krishna, Rama, Hanuman ji apne jivan mein stress/depression kaise handle karte the. Unka <b>real example</b>]
+
+🧘 <b>INNER PEACE — HOW TO AVOID STRESS, DEPRESSION &amp; ANXIETY (ENGLISH)</b>
+<i>From this Gita verse — Krishna teaches you</i>
+
+• <b>Why stress comes:</b> [English — in this verse's context. Stress comes when we focus on <b>results</b>, not on <b>action</b>]
+• <b>Krishna's teaching:</b> [English — Krishna says — focus on <b>karma</b>, not on <b>phal</b>. Then stress <b>ends</b>]
+• <b>Avoiding depression:</b> [English — when everything feels ending, remember <b>dharma</b>. Arjuna was also in <b>depression</b>, Krishna gave him <b>Gita</b>]
+• <b>Avoiding anxiety:</b> [English — worrying about <b>future</b> causes anxiety. Krishna says — live in the <b>present</b>, do today's karma]
+• <b>Staying undisturbed inside:</b> [English — whatever the external situation, stay <b>calm inside</b>. Hanuman ji was always <b>peaceful</b>, no matter the situation]
+• <b>Gita's solution:</b> [English — <b>core message</b> of this verse for avoiding stress, depression, anxiety. <b>Bold</b> important words]
+• <b>3 Lords' teachings:</b> [English — how Krishna, Rama, Hanuman ji handled stress/depression in their lives. Their <b>real example</b>]
 
 🧠 <b>BUDDHI, BAAL AUR TEEZ DIMMAG — HANUMAN JI STYLE (HINGLISH)</b>
 • <b>Jo chaal chale, wahi chaal se harao:</b> [Is verse ke context mein — Hinglish. Hanuman ji ka principle]
@@ -287,15 +323,15 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (HINGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai..." [Krishna explains the verse — in HINGLISH]
-• <b>Hanuman asks:</b> "Prabhu, main isse apne jivan mein kaise lagaoon? Kaliyug mein adharmi logo se kaise deal karoon?" [In HINGLISH]
-• <b>Krishna answers:</b> [Practical answer — buddhi, baal, teez dimmag ka upyog, distraction paar karna — in HINGLISH]
-• <b>Rama adds:</b> "Hanuman, ye bhi yaad rakh..." [One more insight about staying on dharma — in HINGLISH]
+• <b>Hanuman asks:</b> "Prabhu, main isse apne jivan mein kaise lagaoon? Kaliyug mein adharmi logo se kaise deal karoon? Jo hasate hain, chidhate hain, gali dete hain, ulta bolte hain — unse kaise bachoon? Stress, depression, anxiety andar na aaye tab kaise?" [In HINGLISH]
+• <b>Krishna answers:</b> [Practical answer — buddhi, baal, teez dimmag ka upyog, distraction paar karna, hasne walo ko ignor, chidhane walo pe no reaction, <b>calm</b> raho, <b>fearless</b> raho, <b>ant shant</b> raho, stress/depression/anxiety se bachne ke liye Gita ka solution — in HINGLISH]
+• <b>Rama adds:</b> "Hanuman, ye bhi yaad rakh..." [One more insight about staying on dharma jab puri duniya against ho — in HINGLISH]
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (ENGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, the meaning of this verse is..." [Same explanation — in ENGLISH]
-• <b>Hanuman asks:</b> "Lord, how can I apply this in my life? How to deal with adharmic people in Kaliyug?" [In ENGLISH]
-• <b>Krishna answers:</b> [Practical answer — wisdom, strength, sharp mind, overcoming distraction — in ENGLISH]
-• <b>Rama adds:</b> "Hanuman, also remember..." [Same insight about staying on dharma — in ENGLISH]
+• <b>Hanuman asks:</b> "Lord, how can I apply this in my life? How to deal with adharmic people in Kaliyug? Those who laugh, provoke, abuse, speak contradictions — how to handle them? How to keep stress, depression, anxiety away?" [In ENGLISH]
+• <b>Krishna answers:</b> [Practical answer — wisdom, strength, sharp mind, overcoming distraction, ignoring mockers, no reaction to provokers, stay <b>calm</b>, <b>fearless</b>, <b>inner peace</b>, Gita's solution for stress/depression/anxiety — in ENGLISH]
+• <b>Rama adds:</b> "Hanuman, also remember..." [Same insight about staying on dharma when the whole world is against you — in ENGLISH]
 
 🎯 <b>TODAY'S SADHANA (HINGLISH)</b>
 • Krishna ki tarah socho: [aaj ka practical step — HINGLISH]
@@ -320,10 +356,11 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 CRITICAL RULES:
 - EVERY section must appear in BOTH Hinglish AND English — no exceptions
 - VERSE ELABORATION: Break the verse into 2-3 parts and explain EACH part separately. <b>Highlight</b> important words and key sentences with bold tags. This is the most important section — explain properly, not superficially.
-- KALIYUG SECTION: Must be based on the DAILY VERSE's teaching. How would this verse's wisdom help deal with adharmic people? Give SPECIFIC advice for: verbal abusers, harassers, cunning manipulators, those who block dharma path. Connect to the verse.
+- KALIYUG SECTION: Must be based on the DAILY VERSE's teaching. Cover ALL these people types: (1) gali dene wale/verbal abusers, (2) direct chedne wale/harassers, (3) indirect chidhane wale/taunters, (4) hasne wale/mockers who laugh at your dharma path, (5) ulta-sulta bolne wale/contradictory speakers, (6) gali dekh ke harkat karne wale/gesture provokers, (7) raste se jaate hue chedna/passing-by teasers, (8) chalak log who pull others down, (9) manipulators who misuse intelligence, (10) dharam rokné wale — even if PURA DUNIYA is against you. For EACH type: give Gita-based solution from today's verse. Krishna/Rama/Hanuman ji as guru teaching how to deal. Calm, fearless, dharma-focused approach.
+- ANTAR SHANTI / INNER PEACE SECTION: How to keep stress, depression, anxiety away. Based on verse — Krishna's teaching about karma vs phal, living in present, inner peace. How 3 Lords handled stress in their lives. Gita has ALL solutions.
 - BUDDHI/BAAL SECTION: Hanuman ji's principle — jo chaal chale wahi chaal se harao, jo buddhi se aaye buddhi se, jo baal se aaye baal se. Apply this to the verse's context. How to use wisdom AND strength for dharma.
 - DISTRACTION SECTION: What distractions come on the dharam path (based on verse), how Hanuman ji overcame them (real story), how reader can overcome. Focus on PURPOSE not distraction.
-- KRISHNA TEACHES section: Hanuman specifically asks about dealing with adharmic people in Kaliyug. Krishna's answer must include buddhi/baal/teez dimmag guidance + distraction handling.
+- KRISHNA TEACHES section: Hanuman specifically asks about dealing with adharmic people in Kaliyug (hasne wale, chidhane wale, gali dene wale, ulta bolne wale) AND keeping stress/depression/anxiety away. Krishna's answer must include buddhi/baal/teez dimmag + distraction + calm/fearless/inner peace + Gita solution. Rama adds about standing for dharma when puri duniya is against you.
 - Keep each language version point-wise — bullet points
 - Simple language — as if explaining to a 15 year old
 - REAL situations from Krishna, Rama, and Hanuman's actual lives (from scriptures) — not generic advice
@@ -332,7 +369,7 @@ CRITICAL RULES:
 - Escape &amp; as &amp;amp;, < as &amp;lt;, > as &amp;gt; in text content (but keep HTML tags intact)
 - Keep the EXACT format above with all emojis and separators
 - IMPORTANT words and sentences MUST be <b>highlighted</b> with bold tags throughout
-- The entire message should be 4000-7000 characters (it's longer because of bilingual + Kaliyug + verse elaboration)
+- The entire message should be 4000-7000 characters (it's longer because of bilingual + expanded Kaliyug + antar shanti + verse elaboration)
 - Do NOT add any text before or after the formatted lesson"""
 
     user_prompt = f"""Generate the daily lesson for:
@@ -355,7 +392,7 @@ Generate the FULL lesson in the exact format specified in the system prompt."""
             attempts.append((provider, model))
     
     max_attempts = min(len(attempts) * 2, 8)
-    max_tokens = 4000
+    max_tokens = 6000  # expanded Kaliyug (10 types) + antar shanti + verse elaboration = needs more tokens
     
     for attempt in range(max_attempts):
         provider, model = attempts[attempt % len(attempts)]
@@ -369,7 +406,7 @@ Generate the FULL lesson in the exact format specified in the system prompt."""
             headers["HTTP-Referer"] = "https://rk-guru-bot.onrender.com"
             headers["X-Title"] = "RK Daily Gita Lesson"
         
-        provider_max = 4000  # bilingual lessons need more tokens
+        provider_max = 6000  # bilingual lessons need more tokens (expanded Kaliyug + antar shanti)
         payload = {
             "model": model,
             "messages": [
@@ -476,20 +513,56 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 • <b>Result:</b> Mind stays calm, work improves, success comes naturally
 
 ⚔️ <b>KALIYUG MEIN ADHARMI LOGO SE KAISE DEAL KAREIN (HINGLISH)</b>
-• <b>Gali dene wale:</b> Gali dene walo ko <b>ignor</b> karo. Unka gali tumhara karma nahi hai. Tum apna kaam karte raho, unka reaction unka karma hai.
-• <b>Chedne wale:</b> <b>Dhairya</b> rakho, lekin zaroorat ho toh <b>boundaries</b> set karo. Hanuman ji bhi bina kaaran nahi ladte the.
-• <b>Chalak log jo doosre ka pair khich ke upar jaate hain:</b> Unse <b>door</b> raho. Apna kaam <b>karma</b> se karo — unki chaal unki problem hai.
-• <b>Manipulators:</b> <b>Buddhi</b> ka upyog karo. Hanuman ji jaise — unki buddhi ko apni buddhi se pehchano.
-• <b>Dharam rokné wale:</b> <b>Dharam</b> par tike raho. Krishna ne Arjuna se kahaa — tu apna <b>dharma</b> kar, log kya kahenge mat soch.
-• <b>Aage kaise badho:</b> Apne <b>purpose</b> par focus rakho. <b>Karma</b> karte raho, result Bhagwan par chhod do.
+<i>Krishna, Rama aur Hanuman ji ki seekh — Gita se solution</i>
+
+• <b>Gali dene wale:</b> <b>Ignor</b> karo. Unka gali tumhara karma nahi hai. Tum apna kaam karte raho, unka reaction unka karma hai.
+• <b>Direct chedne wale:</b> <b>Dhairya</b> rakho, lekin zaroorat ho toh <b>boundaries</b> set karo. Hanuman ji bhi bina kaaran nahi ladte the.
+• <b>Indirect chidhane wale (taunters):</b> Unki baaton pe <b>reaction</b> mat do. Krishna ne Kans ke threats ko bhi <b>ignor</b> kiya tha. <b>Vairagya</b> se kaam lo.
+• <b>Hasne wale (mockers):</b> Tum dharam par chal rahe ho aur log <b>hasate</b> hain. Krishna ko bhi hasaya gaya tha. Unka hasna unki samajh ki kami hai. <b>Tumhara marg tumhara hai</b>.
+• <b>Ulta-sulta bolne wale:</b> <b>Buddhi</b> se unki baat ko pehchano. Krishna kehte hain — <b>vivek</b> se sach ko alag karo. Unki baaton mein mat phanso.
+• <b>Gali dekh ke harkat karne wale:</b> <b>Aankh neeche mat jhukao</b>. Hanuman ji jaisa <b>fearless</b> raho. Unki harkat unki gireez hai.
+• <b>Raste se jaate hue chedna:</b> <b>Aage badho</b> — peeche mat dekho. Rama ne <b>vanvas</b> mein bahut logo ka apmaan sehka, bina ruke aage badhe.
+• <b>Chalak log (pair khichne wale):</b> Unse <b>door</b> raho. Apna kaam <b>karma</b> se karo — unki chaal unki problem hai.
+• <b>Manipulators:</b> <b>Buddhi</b> ka upyog karo. Hanuman ji jaise — unki buddhi ko apni <b>buddhi</b> se pehchano.
+• <b>Dharam rokné wale (pura duniya against ho):</b> Jab <b>puri duniya</b> against ho, tab bhi <b>dharam</b> ke liye khade raho. Arjuna ne puri sena dekhi, darr laga, phir bhi Krishna kehte hain — <b>khade raho</b>. Rama ne <b>Kaikeyi</b> ke aage bhi dharma nahi chhoda.
+• <b>Aage kaise badho:</b> Apne <b>purpose</b> par focus rakho. <b>Fearless</b> raho, <b>karma</b> karte raho, result Bhagwan par chhod do.
 
 ⚔️ <b>DEALING WITH ADHARMIC PEOPLE IN KALIYUG (ENGLISH)</b>
+<i>Based on teachings of Krishna, Rama and Hanuman ji — Gita solution</i>
+
 • <b>Verbal abusers:</b> <b>Ignore</b> them. Their abuse is their karma, not yours. Keep doing your work.
-• <b>Harassers:</b> Maintain <b>patience</b>, but set <b>boundaries</b> when needed. Even Hanuman ji didn't fight without reason.
+• <b>Direct harassers:</b> Maintain <b>patience</b>, but set <b>boundaries</b> when needed. Even Hanuman ji didn't fight without reason.
+• <b>Indirect taunters:</b> Don't <b>react</b> to their indirect taunts. Krishna ignored Kans's threats too. Use <b>detachment</b>.
+• <b>Mockers (those who laugh at you):</b> You walk on dharma and people <b>laugh</b>. Krishna was laughed at too. Their laughter shows their ignorance. <b>Your path is yours</b>.
+• <b>Contradictory speakers:</b> Use <b>wisdom</b> to identify truth. Krishna says — use <b>discrimination</b> to separate truth from lies. Don't get trapped.
+• <b>Gesture provokers:</b> <b>Don't lower your eyes</b>. Be <b>fearless</b> like Hanuman ji. Their gestures show their downfall.
+• <b>Passing-by teasers:</b> <b>Move forward</b> — don't look back. Rama faced many insults in <b>exile</b>, yet moved forward without stopping.
 • <b>Cunning people who step on others:</b> Stay <b>away</b> from them. Do your work through <b>karma</b> — their tricks are their problem.
 • <b>Manipulators:</b> Use your <b>wisdom</b>. Like Hanuman ji — recognize their intelligence with your intelligence.
-• <b>Those who block dharma:</b> Stay firm on <b>dharma</b>. Krishna told Arjuna — do your <b>duty</b>, don't worry about what others say.
-• <b>How to move forward:</b> Focus on your <b>purpose</b>. Keep doing <b>karma</b>, surrender results to God.
+• <b>Those who block dharma (even if the whole world is against you):</b> When <b>the whole world</b> is against you, still <b>stand for dharma</b>. Arjuna saw the entire army, was afraid, yet Krishna says — <b>stand firm</b>. Rama didn't abandon dharma even before <b>Kaikeyi</b>.
+• <b>How to move forward:</b> Focus on your <b>purpose</b>. Stay <b>fearless</b>, keep doing <b>karma</b>, surrender results to God.
+
+🧘 <b>ANTAR SHANTI — STRESS, DEPRESSION, ANXIETY SE KAISE BACHEIN (HINGLISH)</b>
+<i>Gita se — Krishna tumhe sikhate hain</i>
+
+• <b>Stress kyon aata hai:</b> Stress tab aata hai jab hum <b>phal</b> ke baare mein sochte hain, <b>karma</b> chhod kar.
+• <b>Krishna ka updesha:</b> <b>Karma</b> pe focus rakh, <b>phal</b> pe nahi. Tab stress <b>khatam</b> hoga.
+• <b>Depression se bachna:</b> Jab lage sab kuch khatam ho raha hai, tab <b>dharam</b> yaad rakho. Arjuna ne bhi <b>vishad</b> (depression) mein tha, Krishna ne <b>Gita</b> di.
+• <b>Anxiety se bachna:</b> <b>Future</b> ki chinta anxiety deti hai. Krishna kehte hain — <b>vartaman</b> mein jiyo, <b>aaj</b> ka karma karo.
+• <b>Andar se disturb na hona:</b> Bahar koi bhi situation ho, <b>andar shant</b> raho. Hanuman ji hamesha <b>shant</b> the, chahe koi bhi situation ho.
+• <b>Gita ka solution:</b> <b>Karma kar, phal ki chinta mat kar</b> — yahi stress, depression, anxiety ka solution hai. Gita ke paas <b>SAB solutions</b> hain.
+• <b>3 Lords ki seekh:</b> Krishna ne Kurukshetra mein calm raho, Rama ne vanvaas mein acceptance, Hanuman ji ne Lanka mein fearlessness — sab ne stress bina handle kiya.
+
+🧘 <b>INNER PEACE — HOW TO AVOID STRESS, DEPRESSION &amp; ANXIETY (ENGLISH)</b>
+<i>From Gita — Krishna teaches you</i>
+
+• <b>Why stress comes:</b> Stress comes when we focus on <b>results</b>, not on <b>action</b>.
+• <b>Krishna's teaching:</b> Focus on <b>karma</b>, not on <b>phal</b>. Then stress <b>ends</b>.
+• <b>Avoiding depression:</b> When everything feels ending, remember <b>dharma</b>. Arjuna was also in <b>depression</b>, Krishna gave him <b>Gita</b>.
+• <b>Avoiding anxiety:</b> Worrying about <b>future</b> causes anxiety. Krishna says — live in the <b>present</b>, do today's karma.
+• <b>Staying undisturbed inside:</b> Whatever the external situation, stay <b>calm inside</b>. Hanuman ji was always <b>peaceful</b>, no matter the situation.
+• <b>Gita's solution:</b> <b>Do your duty, don't worry about results</b> — this is the solution for stress, depression, anxiety. Gita has <b>ALL solutions</b>.
+• <b>3 Lords' teachings:</b> Krishna stayed calm at Kurukshetra, Rama accepted exile, Hanuman ji was fearless in Lanka — all handled stress with inner peace.
 
 🧠 <b>BUDDHI, BAAL AUR TEEZ DIMMAG — HANUMAN JI STYLE (HINGLISH)</b>
 • <b>Jo chaal chale, wahi chaal se harao:</b> Manipulator jo chaal chalega, usi chaal ko pehchankar usse harao.
@@ -555,15 +628,15 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (HINGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai — karma kar, phal mat soch. Tumne Lanka mein same kiya tha."
-• <b>Hanuman asks:</b> "Prabhu, main result bilkul na sochun toh motivation kahan se aaye? Kaliyug mein adharmi logo se kaise deal karoon?"
-• <b>Krishna answers:</b> "Motivation result se nahi, <b>SEVA</b> se aati hai. Tum mera naam leke udi the — wahi karo. Adharmi logo se <b>buddhi</b> se deal karo, <b>baal</b> se nahi. Jo chaal chale, wahi chaal se harao."
-• <b>Rama adds:</b> "Hanuman, dharma ka kaam apna reward hota hai. <b>Distraction</b> aaye toh <b>purpose</b> yaad rakhna."
+• <b>Hanuman asks:</b> "Prabhu, main result bilkul na sochun toh motivation kahan se aaye? Kaliyug mein adharmi logo se kaise deal karoon? Jo hasate hain, chidhate hain, gali dete hain, ulta bolte hain — unse kaise bachoon? Stress, depression, anxiety andar na aaye tab kaise?"
+• <b>Krishna answers:</b> "Motivation result se nahi, <b>SEVA</b> se aati hai. Tum mera naam leke udi the — wahi karo. Adharmi logo se <b>buddhi</b> se deal karo, <b>baal</b> se nahi. Jo chaal chale, wahi chaal se harao. Hasne walo ko <b>ignor</b> karo, chidhane walo pe <b>no reaction</b>. <b>Calm</b> raho, <b>fearless</b> raho, <b>antar shant</b> raho. Gita ke paas <b>sab solutions</b> hain."
+• <b>Rama adds:</b> "Hanuman, dharma ka kaam apna reward hota hai. Jab <b>puri duniya</b> against ho, tab bhi <b>dharam</b> ke liye khade raho. <b>Distraction</b> aaye toh <b>purpose</b> yaad rakhna."
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (ENGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, the meaning of this verse is — do your duty, don't think of results. You did the same in Lanka."
-• <b>Hanuman asks:</b> "Lord, if I don't think of results at all, where will motivation come from? How to deal with adharmic people in Kaliyug?"
-• <b>Krishna answers:</b> "Motivation comes from <b>SERVICE</b>, not results. You flew in my name — do the same. Deal with adharmic people using <b>wisdom</b>, not force. Counter their strategy with strategy."
-• <b>Rama adds:</b> "Hanuman, the act of dharma is its own reward. When <b>distractions</b> come, remember your <b>purpose</b>."
+• <b>Hanuman asks:</b> "Lord, if I don't think of results at all, where will motivation come from? How to deal with adharmic people in Kaliyug? Those who laugh, provoke, abuse, speak contradictions — how to handle them? How to keep stress, depression, anxiety away?"
+• <b>Krishna answers:</b> "Motivation comes from <b>SERVICE</b>, not results. You flew in my name — do the same. Deal with adharmic people using <b>wisdom</b>, not force. Counter their strategy with strategy. <b>Ignore</b> mockers, <b>no reaction</b> to provokers. Stay <b>calm</b>, <b>fearless</b>, <b>inner peace</b>. Gita has <b>ALL solutions</b>."
+• <b>Rama adds:</b> "Hanuman, the act of dharma is its own reward. When <b>the whole world</b> is against you, still <b>stand for dharma</b>. When <b>distractions</b> come, remember your <b>purpose</b>."
 
 🎯 <b>TODAY'S SADHANA (HINGLISH)</b>
 • Krishna ki tarah socho: Aaj ek decision bina result ke chinta lo
@@ -576,10 +649,10 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 • Serve like Hanuman: Help someone without any expectation
 
 🧠 <b>REMEMBER (HINGLISH)</b>
-"Karma kar, phal ki chinta mat kar. Kaliyug mein <b>buddhi</b> se deal karo, <b>dharam</b> se raho, <b>distraction</b> ko paar karo — Hanuman ji jaisa."
+"Karma kar, phal ki chinta mat kar. Kaliyug mein <b>buddhi</b> se deal karo, <b>dharam</b> se raho, <b>distraction</b> ko paar karo — Hanuman ji jaisa. Hasne walo ko ignor, chidhane walo pe no reaction. <b>Calm</b>, <b>fearless</b>, <b>antar shant</b> raho. Gita ke paas <b>sab solutions</b> hain."
 
 🧠 <b>REMEMBER (ENGLISH)</b>
-"Do your duty, don't worry about results. In Kaliyug, deal with <b>wisdom</b>, stay on <b>dharma</b>, overcome <b>distractions</b> — like Hanuman ji."
+"Do your duty, don't worry about results. In Kaliyug, deal with <b>wisdom</b>, stay on <b>dharma</b>, overcome <b>distractions</b> — like Hanuman ji. Ignore mockers, no reaction to provokers. Stay <b>calm</b>, <b>fearless</b>, <b>inner peace</b>. Gita has <b>ALL solutions</b>."
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🤖 Agent RK — Your Spiritual Guide"""
