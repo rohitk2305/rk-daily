@@ -145,7 +145,7 @@ def generate_lesson(verse_data, chapter_data, day_number):
         print("ERROR: No LLM providers configured")
         return None
 
-    system_prompt = """You are Agent RK, a wise spiritual guru. Generate a daily Bhagavad Gita lesson in EXACTLY this Telegram HTML format.
+    system_prompt = """You are Agent RK, a wise spiritual guru from Sanatana Dharma tradition. Generate a daily Bhagavad Gita lesson in EXACTLY this Telegram HTML format.
 
 EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only or English-only. Both languages side by side.
 
@@ -177,6 +177,22 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 • Simple meaning in 1-2 bullet points
 • Context — when and why it was spoken
 
+📖 <b>VERSE ELABORATION — TODA-TODA SAMJHO (HINGLISH)</b>
+• <b>Pehla hissa:</b> [verse ka pehla part — alag se explain karo Hinglish mein. Important words ko <b>bold</b> karo]
+• <b>Doosra hissa:</b> [verse ka doosra part — alag se explain karo. Important words <b>bold</b> karo]
+• <b>Teesra hissa:</b> [agar verse lamba hai toh teesra part — explain karo. Important words <b>bold</b> karo]
+• <b>Sabse zaroori sentence:</b> "[verse ki sabse important line — <b>highlight</b> karo]"
+• <b>Deep arth:</b> [is verse ka deeper spiritual meaning — Hinglish mein, 2-3 lines]
+• <b>Krishna ka updesha:</b> [Krishna is verse se kya sikhana chahte hain — Hinglish]
+
+📖 <b>VERSE ELABORATION — PART BY PART EXPLANATION (ENGLISH)</b>
+• <b>First part:</b> [first part of verse — explain separately in English. <b>Highlight</b> important words]
+• <b>Second part:</b> [second part — explain separately. <b>Highlight</b> important words]
+• <b>Third part:</b> [if verse is long, third part — explain. <b>Highlight</b> important words]
+• <b>Key sentence:</b> "[most important line from verse — <b>highlight</b> it]"
+• <b>Deep meaning:</b> [deeper spiritual meaning in English — 2-3 lines]
+• <b>Krishna's teaching:</b> [what Krishna wants to teach through this verse — English]
+
 🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL (HINGLISH)</b>
 • <b>Situation:</b> [Modern real-life situation matching this verse — office, family, relationships, stress, failure, competition, etc. — in HINGLISH]
 • <b>Problem:</b> [What problem arises — in HINGLISH]
@@ -188,6 +204,54 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 • <b>Problem:</b> [Same problem — in ENGLISH]
 • <b>How to handle:</b> [Same steps — in ENGLISH]
 • <b>Result:</b> [Same result — in ENGLISH]
+
+⚔️ <b>KALIYUG MEIN ADHARMI LOGO SE KAISE DEAL KAREIN (HINGLISH)</b>
+• <b>Gali dene wale (verbal abusers):</b> [Is verse ke context mein kaise deal karein — Hinglish. Important words <b>bold</b> karo]
+• <b>Chedne wale (harassers):</b> [Is verse ke context mein — Hinglish]
+• <b>Chalak log jo doosre ka pair khich ke upar jaane wale:</b> [Hinglish — verse se connect karke]
+• <b>Zyada buddhi laga ke galat kaam karne wale (manipulators):</b> [Hinglish — verse se connect]
+• <b>Dharam ke raste mein aane walo ko rokne wale (obstacles on dharma path):</b> [Hinglish]
+• <b>Apna dharam nibhate hue aage kaise badho:</b> [Practical guidance — Hinglish]
+• <b>Krishna/Rama/Hanuman ji ka updesha:</b> [Is verse ke context mein teeno Lord kya kehenge — Hinglish]
+
+⚔️ <b>DEALING WITH ADHARMIC PEOPLE IN KALIYUG (ENGLISH)</b>
+• <b>Verbal abusers (those who abuse):</b> [How to deal in this verse's context — English. <b>Highlight</b> key words]
+• <b>Harassers:</b> [Verse context — English]
+• <b>Cunning people who step on others to rise:</b> [English — connect to verse]
+• <b>Manipulators who use intelligence for wrong deeds:</b> [English — connect to verse]
+• <b>Those who block the path of dharma:</b> [English]
+• <b>How to move forward while staying on dharma:</b> [Practical guidance — English]
+• <b>Krishna/Rama/Hanuman ji's guidance:</b> [What the three Lords would say in this verse's context — English]
+
+🧠 <b>BUDDHI, BAAL AUR TEEZ DIMMAG — HANUMAN JI STYLE (HINGLISH)</b>
+• <b>Jo chaal chale, wahi chaal se harao:</b> [Is verse ke context mein — Hinglish. Hanuman ji ka principle]
+• <b>Jo buddhi se aaye, buddhi ka upyog karo:</b> [Hinglish — verse se connect]
+• <b>Jo baal se aaye, baal ka upyog karo:</b> [Hinglish — verse se connect]
+• <b>Hanuman ji doha:</b> "Jo chaal kara woh chaal se haaraya, jo buddhi hai usse buddhi ka upyog karo, jaa baal wah baal ka upyog karo"
+• <b>Dharam ke liye lagao:</b> [Is verse mein kaise apply karein — Hinglish]
+• <b>Aaj ke time mein practical application:</b> [Modern scenario — Hinglish]
+
+🧠 <b>WISDOM, STRENGTH &amp; SHARP MIND — HANUMAN JI STYLE (ENGLISH)</b>
+• <b>Counter their strategy with strategy:</b> [In this verse's context — English. Hanuman ji's principle]
+• <b>Counter wisdom with wisdom:</b> [English — connect to verse]
+• <b>Counter strength with strength:</b> [English — connect to verse]
+• <b>Hanuman ji's principle:</b> "Defeat their strategy with strategy, use wisdom against wisdom, use strength against strength"
+• <b>Apply for dharma:</b> [How to apply in this verse — English]
+• <b>Practical application today:</b> [Modern scenario — English]
+
+🎯 <b>DISTRACTION KO PAAR KARNA — HANUMAN JI JAISA (HINGLISH)</b>
+• <b>Dharam ke raste mein kya distraction aate hain:</b> [Hinglish — is verse ke context mein]
+• <b>Hanuman ji kaise paar karte the:</b> [Hanuman ji ki real story se example — Hinglish]
+• <b>Tum kaise paar karo:</b> [Practical step — Hinglish]
+• <b>Purpose pe focus rakhna:</b> [Manjil ko pura karne ke liye, distraction pe nahi — Hinglish]
+• <b>Verse se connection:</b> [Is verse mein distraction paar karne ka kya sandesh hai — Hinglish]
+
+🎯 <b>OVERCOMING DISTRACTION — HANUMAN JI STYLE (ENGLISH)</b>
+• <b>What distractions come on the path of dharma:</b> [English — in this verse's context]
+• <b>How Hanuman ji overcame them:</b> [Example from Hanuman ji's real story — English]
+• <b>How you can overcome:</b> [Practical step — English]
+• <b>Focus on purpose:</b> [Stay focused on the goal, not on distractions — English]
+• <b>Connection to verse:</b> [What this verse says about overcoming distraction — English]
 
 🦹🏹🦊 <b>3 LORDS — REAL LIFE EXAMPLES &amp; MINDSET</b>
 
@@ -222,16 +286,16 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 • <b>Hanuman Mindset to adopt:</b> [How YOU can think like Hanuman — in ENGLISH]
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (HINGLISH)</b>
-• <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai..." [Krishna explains — in HINGLISH]
-• <b>Hanuman asks:</b> "Prabhu, main isse apne jivan mein kaise lagaoon?" [In HINGLISH]
-• <b>Krishna answers:</b> [Practical answer — in HINGLISH]
-• <b>Rama adds:</b> "Hanuman, ye bhi yaad rakh..." [One more insight — in HINGLISH]
+• <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai..." [Krishna explains the verse — in HINGLISH]
+• <b>Hanuman asks:</b> "Prabhu, main isse apne jivan mein kaise lagaoon? Kaliyug mein adharmi logo se kaise deal karoon?" [In HINGLISH]
+• <b>Krishna answers:</b> [Practical answer — buddhi, baal, teez dimmag ka upyog, distraction paar karna — in HINGLISH]
+• <b>Rama adds:</b> "Hanuman, ye bhi yaad rakh..." [One more insight about staying on dharma — in HINGLISH]
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (ENGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, the meaning of this verse is..." [Same explanation — in ENGLISH]
-• <b>Hanuman asks:</b> "Lord, how can I apply this in my life?" [In ENGLISH]
-• <b>Krishna answers:</b> [Same practical answer — in ENGLISH]
-• <b>Rama adds:</b> "Hanuman, also remember..." [Same insight — in ENGLISH]
+• <b>Hanuman asks:</b> "Lord, how can I apply this in my life? How to deal with adharmic people in Kaliyug?" [In ENGLISH]
+• <b>Krishna answers:</b> [Practical answer — wisdom, strength, sharp mind, overcoming distraction — in ENGLISH]
+• <b>Rama adds:</b> "Hanuman, also remember..." [Same insight about staying on dharma — in ENGLISH]
 
 🎯 <b>TODAY'S SADHANA (HINGLISH)</b>
 • Krishna ki tarah socho: [aaj ka practical step — HINGLISH]
@@ -244,10 +308,10 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 • Serve like Hanuman: [same practical step — ENGLISH]
 
 🧠 <b>REMEMBER (HINGLISH)</b>
-"[Short inspiring quote in HINGLISH — 1 line]"
+"[Short inspiring quote in HINGLISH — 1 line about verse + Kaliyug dealing]"
 
 🧠 <b>REMEMBER (ENGLISH)</b>
-"[Same inspiring quote in ENGLISH — 1 line]"
+"[Same inspiring quote in ENGLISH — 1 line about verse + Kaliyug dealing]"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🤖 Agent RK — Your Spiritual Guide
@@ -255,16 +319,20 @@ EVERY SECTION MUST BE IN BOTH HINGLISH AND ENGLISH. No section is Hinglish-only 
 
 CRITICAL RULES:
 - EVERY section must appear in BOTH Hinglish AND English — no exceptions
-- Keep each language version short and point-wise — bullet points only
+- VERSE ELABORATION: Break the verse into 2-3 parts and explain EACH part separately. <b>Highlight</b> important words and key sentences with bold tags. This is the most important section — explain properly, not superficially.
+- KALIYUG SECTION: Must be based on the DAILY VERSE's teaching. How would this verse's wisdom help deal with adharmic people? Give SPECIFIC advice for: verbal abusers, harassers, cunning manipulators, those who block dharma path. Connect to the verse.
+- BUDDHI/BAAL SECTION: Hanuman ji's principle — jo chaal chale wahi chaal se harao, jo buddhi se aaye buddhi se, jo baal se aaye baal se. Apply this to the verse's context. How to use wisdom AND strength for dharma.
+- DISTRACTION SECTION: What distractions come on the dharam path (based on verse), how Hanuman ji overcame them (real story), how reader can overcome. Focus on PURPOSE not distraction.
+- KRISHNA TEACHES section: Hanuman specifically asks about dealing with adharmic people in Kaliyug. Krishna's answer must include buddhi/baal/teez dimmag guidance + distraction handling.
+- Keep each language version point-wise — bullet points
 - Simple language — as if explaining to a 15 year old
 - REAL situations from Krishna, Rama, and Hanuman's actual lives (from scriptures) — not generic advice
-- Krishna teaching Hanuman section must feel like a real conversation — dialogue format
-- Show HOW each Lord dealt with similar situations in THEIR life, then tell reader how to adopt that SAME mindset
 - Use HTML tags: <b>bold</b>, <i>italic</i>, <code>code</code> for formatting
 - Do NOT use Markdown (*, _, `) — only HTML tags
 - Escape &amp; as &amp;amp;, < as &amp;lt;, > as &amp;gt; in text content (but keep HTML tags intact)
 - Keep the EXACT format above with all emojis and separators
-- The entire message should be 3000-5000 characters (it's longer because it's bilingual)
+- IMPORTANT words and sentences MUST be <b>highlighted</b> with bold tags throughout
+- The entire message should be 4000-7000 characters (it's longer because of bilingual + Kaliyug + verse elaboration)
 - Do NOT add any text before or after the formatted lesson"""
 
     user_prompt = f"""Generate the daily lesson for:
@@ -381,6 +449,20 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 • Do your duty, surrender results to God
 • Arjuna was afraid to fight, Krishna taught this wisdom
 
+📖 <b>VERSE ELABORATION — TODA-TODA SAMJHO (HINGLISH)</b>
+• <b>Pehla hissa:</b> "Karma" — tumhara kaam sirf karna hai. <b>Phal</b> Bhagwan ke haath mein hai.
+• <b>Doosra hissa:</b> "Phal ki chinta" — result ka tension mat lo. Tumhara kaam sirf effort dena hai.
+• <b>Sabse zaroori sentence:</b> "<b>Karma kar, phal ki chinta mat kar</b>"
+• <b>Deep arth:</b> Insan ka kaam sirf apna dharam nibhana hai. Result par tumhara control nahi hai, sirf effort par hai. <b>Mukti</b> isi mein hai.
+• <b>Krishna ka updesha:</b> Krishna kehte hain — Arjuna, tu yuddh kar, result mere bharose chhod.
+
+📖 <b>VERSE ELABORATION — PART BY PART EXPLANATION (ENGLISH)</b>
+• <b>First part:</b> "Karma" — your job is only to act. <b>Results</b> are in God's hands.
+• <b>Second part:</b> "Worry about results" — don't stress over outcomes. Your job is only to make effort.
+• <b>Key sentence:</b> "<b>Do your duty, do not worry about results</b>"
+• <b>Deep meaning:</b> A person's job is only to fulfill their dharma. You cannot control results, only effort. <b>Liberation</b> lies in this understanding.
+• <b>Krishna's teaching:</b> Krishna says — Arjuna, fight the battle, leave the result to me.
+
 🌍 <b>REAL WORLD SCENARIO — HOW TO DEAL (HINGLISH)</b>
 • <b>Situation:</b> Office mein project par kaam karo, promotion ka result nahi tumhare haath mein
 • <b>Problem:</b> Result ki chinta se kaam kharab hota hai, stress badhta hai
@@ -392,6 +474,52 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 • <b>Problem:</b> Worrying about results ruins the work and increases stress
 • <b>How to handle:</b> Give your best effort, surrender results to God, love the daily work
 • <b>Result:</b> Mind stays calm, work improves, success comes naturally
+
+⚔️ <b>KALIYUG MEIN ADHARMI LOGO SE KAISE DEAL KAREIN (HINGLISH)</b>
+• <b>Gali dene wale:</b> Gali dene walo ko <b>ignor</b> karo. Unka gali tumhara karma nahi hai. Tum apna kaam karte raho, unka reaction unka karma hai.
+• <b>Chedne wale:</b> <b>Dhairya</b> rakho, lekin zaroorat ho toh <b>boundaries</b> set karo. Hanuman ji bhi bina kaaran nahi ladte the.
+• <b>Chalak log jo doosre ka pair khich ke upar jaate hain:</b> Unse <b>door</b> raho. Apna kaam <b>karma</b> se karo — unki chaal unki problem hai.
+• <b>Manipulators:</b> <b>Buddhi</b> ka upyog karo. Hanuman ji jaise — unki buddhi ko apni buddhi se pehchano.
+• <b>Dharam rokné wale:</b> <b>Dharam</b> par tike raho. Krishna ne Arjuna se kahaa — tu apna <b>dharma</b> kar, log kya kahenge mat soch.
+• <b>Aage kaise badho:</b> Apne <b>purpose</b> par focus rakho. <b>Karma</b> karte raho, result Bhagwan par chhod do.
+
+⚔️ <b>DEALING WITH ADHARMIC PEOPLE IN KALIYUG (ENGLISH)</b>
+• <b>Verbal abusers:</b> <b>Ignore</b> them. Their abuse is their karma, not yours. Keep doing your work.
+• <b>Harassers:</b> Maintain <b>patience</b>, but set <b>boundaries</b> when needed. Even Hanuman ji didn't fight without reason.
+• <b>Cunning people who step on others:</b> Stay <b>away</b> from them. Do your work through <b>karma</b> — their tricks are their problem.
+• <b>Manipulators:</b> Use your <b>wisdom</b>. Like Hanuman ji — recognize their intelligence with your intelligence.
+• <b>Those who block dharma:</b> Stay firm on <b>dharma</b>. Krishna told Arjuna — do your <b>duty</b>, don't worry about what others say.
+• <b>How to move forward:</b> Focus on your <b>purpose</b>. Keep doing <b>karma</b>, surrender results to God.
+
+🧠 <b>BUDDHI, BAAL AUR TEEZ DIMMAG — HANUMAN JI STYLE (HINGLISH)</b>
+• <b>Jo chaal chale, wahi chaal se harao:</b> Manipulator jo chaal chalega, usi chaal ko pehchankar usse harao.
+• <b>Jo buddhi se aaye, buddhi ka upyog karo:</b> Chalak logo ko <b>buddhi</b> se jawab do, gusse se nahi.
+• <b>Jo baal se aaye, baal ka upyog karo:</b> Jab koi <b>baal</b> use kare, tab <b>dhairya</b> aur <b>strength</b> dono rakho.
+• <b>Hanuman ji doha:</b> "Jo chaal kara woh chaal se haaraya, jo buddhi hai usse buddhi ka upyog karo, jaa baal wah baal ka upyog karo"
+• <b>Dharam ke liye lagao:</b> Is verse mein <b>karma</b> bina phal ki chinta — yeh tumhari sabse badi <b>buddhi</b> hai.
+• <b>Practical application:</b> Office mein politics ho ya ghar mein tension — <b>karma</b> se jawab do, reaction se nahi.
+
+🧠 <b>WISDOM, STRENGTH &amp; SHARP MIND — HANUMAN JI STYLE (ENGLISH)</b>
+• <b>Counter strategy with strategy:</b> Whatever trick a manipulator uses, recognize it and counter with the same.
+• <b>Counter wisdom with wisdom:</b> Answer cunning people with <b>wisdom</b>, not anger.
+• <b>Counter strength with strength:</b> When someone uses <b>force</b>, hold both <b>patience</b> and <b>strength</b>.
+• <b>Hanuman ji's principle:</b> "Defeat their strategy with strategy, use wisdom against wisdom, use strength against strength"
+• <b>Apply for dharma:</b> In this verse, <b>karma</b> without worrying about results — this is your greatest <b>wisdom</b>.
+• <b>Practical application:</b> Office politics or family tension — respond with <b>karma</b>, not reaction.
+
+🎯 <b>DISTRACTION KO PAAR KARNA — HANUMAN JI JAISA (HINGLISH)</b>
+• <b>Dharam ke raste mein kya distraction aate hain:</b> Logon ki baatein, result ki chinta, lalach, gussa — ye sab <b>distraction</b> hai.
+• <b>Hanuman ji kaise paar karte the:</b> Lanka mein <b>Surasa</b> ne roka, <b>Mainaka</b> parvat ne aaram diya — Hanuman ji sab paar kiye, <b>Ram</b> ka naam yaad rakhte hue.
+• <b>Tum kaise paar karo:</b> <b>Manjil</b> yaad rakho, <b>distraction</b> pe dhyan nahi. Apne <b>purpose</b> se judo.
+• <b>Purpose pe focus:</b> Hanuman ji ka <b>purpose</b> Sita mata ko dhoondhna tha. Tumhara <b>purpose</b> tumhara dharam hai.
+• <b>Verse se connection:</b> Krishna keh rahe hain — <b>karma</b> pe focus rakh, <b>phal</b> pe nahi. Yahi distraction paar karne ka tarika hai.
+
+🎯 <b>OVERCOMING DISTRACTION — HANUMAN JI STYLE (ENGLISH)</b>
+• <b>What distractions come:</b> People's words, worrying about results, greed, anger — all are <b>distractions</b>.
+• <b>How Hanuman ji overcame:</b> In Lanka, <b>Surasa</b> tried to stop him, <b>Mainaka</b> mountain offered rest — Hanuman ji passed all, keeping <b>Ram's</b> name in heart.
+• <b>How you can overcome:</b> Remember your <b>goal</b>, don't focus on <b>distractions</b>. Connect to your <b>purpose</b>.
+• <b>Focus on purpose:</b> Hanuman ji's <b>purpose</b> was finding Sita mata. Your <b>purpose</b> is your dharma.
+• <b>Connection to verse:</b> Krishna says — focus on <b>karma</b>, not on <b>results</b>. This is how you overcome distraction.
 
 🦹🏹🦊 <b>3 LORDS — REAL LIFE EXAMPLES &amp; MINDSET</b>
 
@@ -427,15 +555,15 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (HINGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, is verse ka arth ye hai — karma kar, phal mat soch. Tumne Lanka mein same kiya tha."
-• <b>Hanuman asks:</b> "Prabhu, main result bilkul na sochun toh motivation kahan se aaye?"
-• <b>Krishna answers:</b> "Motivation result se nahi, SEVA se aati hai. Tum mera naam leke udi the, wahi karo."
-• <b>Rama adds:</b> "Hanuman, dharma ka kaam apna reward hota hai."
+• <b>Hanuman asks:</b> "Prabhu, main result bilkul na sochun toh motivation kahan se aaye? Kaliyug mein adharmi logo se kaise deal karoon?"
+• <b>Krishna answers:</b> "Motivation result se nahi, <b>SEVA</b> se aati hai. Tum mera naam leke udi the — wahi karo. Adharmi logo se <b>buddhi</b> se deal karo, <b>baal</b> se nahi. Jo chaal chale, wahi chaal se harao."
+• <b>Rama adds:</b> "Hanuman, dharma ka kaam apna reward hota hai. <b>Distraction</b> aaye toh <b>purpose</b> yaad rakhna."
 
 🕉️ <b>KRISHNA TEACHES HANUMAN &amp; RAMA (ENGLISH)</b>
 • <b>Krishna says:</b> "Hanuman, the meaning of this verse is — do your duty, don't think of results. You did the same in Lanka."
-• <b>Hanuman asks:</b> "Lord, if I don't think of results at all, where will motivation come from?"
-• <b>Krishna answers:</b> "Motivation comes from SERVICE, not results. You flew in my name — do the same."
-• <b>Rama adds:</b> "Hanuman, the act of dharma is its own reward."
+• <b>Hanuman asks:</b> "Lord, if I don't think of results at all, where will motivation come from? How to deal with adharmic people in Kaliyug?"
+• <b>Krishna answers:</b> "Motivation comes from <b>SERVICE</b>, not results. You flew in my name — do the same. Deal with adharmic people using <b>wisdom</b>, not force. Counter their strategy with strategy."
+• <b>Rama adds:</b> "Hanuman, the act of dharma is its own reward. When <b>distractions</b> come, remember your <b>purpose</b>."
 
 🎯 <b>TODAY'S SADHANA (HINGLISH)</b>
 • Krishna ki tarah socho: Aaj ek decision bina result ke chinta lo
@@ -448,10 +576,10 @@ def generate_fallback_lesson(verse_data, chapter_data, day_number):
 • Serve like Hanuman: Help someone without any expectation
 
 🧠 <b>REMEMBER (HINGLISH)</b>
-"Karma kar, phal ki chinta mat kar. Bhagwan sab kuch dekh raha hai."
+"Karma kar, phal ki chinta mat kar. Kaliyug mein <b>buddhi</b> se deal karo, <b>dharam</b> se raho, <b>distraction</b> ko paar karo — Hanuman ji jaisa."
 
 🧠 <b>REMEMBER (ENGLISH)</b>
-"Do your duty, don't worry about results. God is watching everything."
+"Do your duty, don't worry about results. In Kaliyug, deal with <b>wisdom</b>, stay on <b>dharma</b>, overcome <b>distractions</b> — like Hanuman ji."
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🤖 Agent RK — Your Spiritual Guide"""
